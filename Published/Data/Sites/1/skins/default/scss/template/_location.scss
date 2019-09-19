@@ -1,0 +1,139 @@
+/*Location*/
+
+.wrap-dealer {
+    display: none;
+}
+
+.block-showroom {
+    h1 {
+        text-transform: normal;
+    }
+    .dealer-item {
+        background-color: $color-bg2;
+        margin-bottom: 30px;
+        .dealerContentWrap {
+            padding: 15px;
+            position: relative;
+            @include media-breakpoint-up(md) {
+                &:before {
+                    content: '';
+                    background-image: url('../images/corner.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    width: 45px;
+                    height: 43px;
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                }
+                &:after {
+                    content: '';
+                    background-image: url('../images/corner_bot.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    width: 45px;
+                    height: 43px;
+                    position: absolute;
+                    bottom: 15px;
+                    right: 15px;
+                }
+            }
+        }
+        .thumb {
+            display: block;
+            overflow: hidden;
+            text-align: center;
+            a {
+                display: block;
+                overflow: hidden;
+            }
+        }
+        .dealer-content {
+            left: 0;
+            right: 0;
+            text-align: center;
+            @include media-breakpoint-up(lg) {
+                top: 50%;
+                position: absolute;
+                padding: 0 60px;
+                @include transform(translate(0,
+                -50%));
+            }
+            @include media-breakpoint-up(xl) {
+                padding: 0 69px;
+            }
+            h3 {
+                font-size: 1.25rem;
+                font-weight: 700;
+                color: $color-con1;
+                line-height: 1.65rem;
+                margin-bottom: 20px;
+                a {
+                    color: $color-con1;
+                    text-decoration: none;
+                    @include transition(all 0.3s);
+                    &:hover,
+                    &:focus {
+                        color: $color-link1;
+                    }
+                }
+            }
+            .address {
+                font-size: 0.875rem;
+                font-weight: 400;
+                color: $color-con2;
+                line-height: 1.275rem;
+                position: relative;
+                padding-bottom: 40px;
+                p {
+                    margin: 0;
+                }
+                a.amaps {
+                    background-image: url('../images/btn_order.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: top center;
+                    text-decoration: none;
+                    color: $color-white;
+                    height: 35px;
+                    width: 100%;
+                    line-height: 35px;
+                    display: inline-block;
+                    text-align: center;
+                    margin: 20px auto 0;
+                    font-size: 14px;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-image: url('../images/bottom_icon.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    width: 62px;
+                    height: 15px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 34em)
+// No media query since this is the default in Bootstrap
+// Small devices (landscape phones, 34em and up)
+@include media-breakpoint-up(sm) {}
+
+// Medium devices (tablets, 48em and up)
+@include media-breakpoint-up(md) {}
+
+// Large devices (desktops, 62em and up)
+@include media-breakpoint-up(lg) {}
+
+// Extra large devices (large desktops, 75em and up)
+@include media-breakpoint-up(xl) {}

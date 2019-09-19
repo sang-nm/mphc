@@ -1,0 +1,143 @@
+﻿/// Author:			        Tran Quoc Vuong - itqvuong@gmail.com - tqvuong263@yahoo.com
+/// Created:			    2014-08-25
+/// Last Modified:		    2014-08-25
+
+using System;
+using CanhCam.Web.Framework;
+using Resources;
+using log4net;
+using Telerik.Web.UI;
+using CanhCam.Business;
+
+namespace CanhCam.Web.NewsUI
+{
+
+    public partial class TagListPage : CmsNonBasePage
+    {
+        #region Properties
+
+        RadGridSEOPersister gridPersister;
+        private static readonly ILog log = LogManager.GetLogger(typeof(TagListPage));
+
+        #endregion
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            SecurityHelper.DisableBrowserCache();
+
+            if (!Request.IsAuthenticated)
+            {
+                SiteUtils.RedirectToLoginPage(this);
+                return;
+            }
+
+            if (!NewsPermission.CanManageTags)
+            {
+                SiteUtils.RedirectToAccessDeniedPage(this);
+                return;
+            }
+
+            LoadSettings();
+            PopulateLabels();
+
+            if (!Page.IsPostBack)
+                PopulateControls();
+        }
+
+        private void PopulateLabels()
+        {
+            Title = SiteUtils.FormatPageTitle(siteSettings, NewsResources.NewsTagsTitle);
+            heading.Text = NewsResources.NewsTagsTitle;
+
+            UIHelper.AddConfirmationDialog(btnDelete, NewsResources.NewsTagsDeleteMultiWarning);
+        }
+
+        private void LoadSettings()
+        {
+            lnkBulkEdit.NavigateUrl = SiteRoot + "/News/TagBulkEdit.aspx";
+
+            AddClassToBody("admin-newstags");
+        }
+
+        private void PopulateControls()
+        {
+            
+        }
+
+        #region "RadGrid Event"
+
+        void grid_NeedDataSource(object sender, Telerik.Web.UI.GridNeedDataSourceEventArgs e)
+        {
+            bool isApplied = gridPersister.IsAppliedSortFilterOrGroup;
+            int iCount = Tag.GetCount(siteSettings.SiteGuid, News.FeatureGuid, null);
+            
+            int startRowIndex = isApplied ? 1 : grid.CurrentPageIndex + 1;
+            int maximumRows = isApplied ? iCount : grid.PageSize;
+
+            grid.VirtualItemCount = iCount;
+            grid.AllowCustomPaging = !isApplied;
+            grid.PagerStyle.EnableSEOPaging = !isApplied;
+
+            grid.DataSource = Tag.GetPage(siteSettings.SiteGuid, News.FeatureGuid, null, -1, startRowIndex, maximumRows);
+
+            if (iCount == 0)
+                btnDelete.Visible = false;
+        }
+
+        #endregion
+
+        #region Events
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool isDeleted = false;
+
+                foreach (GridDataItem data in grid.SelectedItems)
+                {
+                    int tagId = Convert.ToInt32(data.GetDataKeyValue("TagId"));
+                    Tag tag = new Tag(tagId);
+
+                    if (tag != null && tag.TagId > -1)
+                    {
+                        ContentLanguage.DeleteByContent(tag.Guid);
+                        TagItem.DeleteByTag(tag.TagId);
+                        Tag.Delete(tagId);
+
+                        LogActivity.Write("Delete news tag", tag.TagText);
+
+                        isDeleted = true;
+                    }
+                }
+
+                if (isDeleted)
+                {
+                    message.SuccessMessage = ResourceHelper.GetResourceString("Resource", "DeleteSuccessMessage");
+                    WebUtils.SetupRedirect(this, Request.RawUrl);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
+        }
+
+        #endregion
+
+        #region OnInit
+
+        protected override void OnInit(EventArgs e)
+        {
+            base.OnInit(e);
+            this.Load += new EventHandler(this.Page_Load);
+            this.btnDelete.Click += new EventHandler(btnDelete_Click);
+
+            grid.NeedDataSource += new GridNeedDataSourceEventHandler(grid_NeedDataSource);
+
+            gridPersister = new RadGridSEOPersister(grid);
+        }
+
+        #endregion
+    }
+}

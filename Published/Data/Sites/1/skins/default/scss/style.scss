@@ -1,0 +1,44 @@
+$enable-flex: false;
+$fa-font-path: "../fonts";
+// bower:scss
+@import "bootstrap/bootstrap.scss";
+// endbower
+// setup
+@import "template/config/plugins";
+@import "template/config/setup";
+@import "template/config/global";
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: $color-base;
+}
+
+
+/* Template */
+
+@import "template/common";
+@import "template/header";
+@import "template/home";
+@import "template/footer";
+@import "template/search";
+@import "template/carousel";
+@import "template/navigation";
+@import "template/aboutus";
+@import "template/news";
+@import "template/banner";
+@import "template/products";
+@import "template/contact";
+@import "template/support";
+@import "template/location";
+@import "template/order";
+@import "template/register";
+@import "template/profile";

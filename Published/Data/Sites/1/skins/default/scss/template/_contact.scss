@@ -1,0 +1,176 @@
+/*CONTACTS*/
+
+.contact-info {
+    .contactBox {
+        background-color: $color-bg4;
+        padding: 20px 30px;
+        margin: 0 0 30px;
+    }
+    h2 {
+        font-size: 16px;
+        font-weight: 700;
+        color: $color-base;
+        line-height: 1.9rem;
+        margin: 0 0 20px;
+    }
+    address {
+        .addr {
+            font-size: 15px;
+            font-weight: 400;
+            color: $color-base;
+            line-height: 1.3375rem;
+            position: relative;
+            > .fa {
+                font-size: 16px;
+                position: absolute;
+                top: 2px;
+                left: 0;
+                vertical-align: middle;
+                color: #f4c449;
+            }
+            > span {
+                padding-left: 25px;
+                display: block;
+            }
+            > a {
+                padding-left: 25px;
+                display: block;
+            }
+            .map {
+                padding-left: 25px;
+                display: block;
+                p {
+                    margin: 0;
+                    span {
+                        display: inline-block;
+                    }
+                    a {
+                        display: inline-block !important;
+                        color: $color-main3;
+                        text-decoration: none;
+                        font-size: 13px;
+                        width: auto;
+                    }
+                    .fa {
+                        font-size: 12px;
+                        color: $color-main3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-form {
+    margin: 0 0 30px;
+    h2 {
+        font-size: 16px;
+        font-weight: 400;
+        color: $color-base;
+        line-height: 1.9rem;
+        margin: 0 0 15px;
+    }
+    .form-group {
+        margin: 0 0 10px;
+        label {
+            font-size: 14px;
+            font-weight: 400;
+            display: inline-block;
+            width: 90px;
+            vertical-align: top;
+            margin-top: 5px;
+            color: $color-base;
+            text-align: left;
+            span {
+                color: red;
+            }
+        }
+        input[type="text"],
+        textarea {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: $color-base;
+            padding: 7px 15px;
+            background-color: transparent;
+            border: 1px solid $color-bd;
+            width: calc(100% - 100px);
+        }
+        textarea {
+            height: 90px;
+        }
+        .frm-btn {
+            position: relative;
+            margin-top: 15px;
+            &:before {
+                display: table;
+                clear: both;
+            }
+            &:after {
+                display: table;
+                clear: both;
+                line-height: 1;
+            }
+            input[type="submit"] {
+                float: right;
+                background-image: url('../images/btn_submit.png');
+                background-size: contain;
+                background-position: 0 0;
+                width: 86px;
+                height: 44px;
+                font-size: 14px;
+                color: $color-white;
+                line-height: 44px;
+                text-align: center;
+                text-transform: uppercase;
+                border: none;
+                background-color: transparent;
+                padding: 0;
+                border-radius: 0;
+            }
+        }
+    }
+    .RadCaptcha {
+        p {
+            margin-top: 0.875rem;
+        }
+        img {
+            display: inline-block!important;
+            margin-right: 0.9375rem;
+            vertical-align: middle;
+        }
+        .rcRefreshImage {
+            display: inline-block!important;
+            vertical-align: middle;
+            position: relative;
+            color: transparent;
+            width: 30px;
+            height: 30px;
+            &:after {
+                content: '\f021';
+                font-family: "FontAwesome";
+                font-size: 18px;
+                color: $color-base;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                left: 0;
+                @include transform(translate(0, -50%));
+            }
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 34em)
+// No media query since this is the default in Bootstrap
+// Small devices (landscape phones, 34em and up)
+@include media-breakpoint-up(sm) {}
+
+// Medium devices (tablets, 48em and up)
+@include media-breakpoint-up(md) {}
+
+// Large devices (desktops, 62em and up)
+@include media-breakpoint-up(lg) {}
+
+// Extra large devices (large desktops, 75em and up)
+@include media-breakpoint-up(xl) {}

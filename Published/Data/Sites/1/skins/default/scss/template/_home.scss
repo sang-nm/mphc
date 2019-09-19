@@ -1,0 +1,469 @@
+/*HOME PAGE*/
+
+.main {
+    padding: 1.875rem 0 3.75rem;
+    background-image: url('../images/bg.png');
+    background-repeat: repeat;
+    background-position: top center;
+}
+
+.homepage {
+    .main {
+        padding: 0;
+        background: none;
+    }
+}
+
+.groupItemsWrap {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.aboutBanner {
+    background-image: url('../images/ve_phan_nu_bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: table;
+    width: 100%;
+    @include media-breakpoint-down(sm) {
+        background-position: 48.5% 100%;
+        background-size: cover;
+        height: 300px!important;
+    }
+    @include media-breakpoint-up(xl) {
+        background-size: cover;
+        background-position: 0 0;
+    }
+    figure {
+        margin: 0;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        a {
+            display: block;
+            margin: 0 0 10px;
+        }
+        figcaption {
+            font-size: 13px;
+            font-weight: 400;
+            color: $color-base1;
+            line-height: 1.213rem;
+            position: relative;
+            &:after {
+                content: '';
+                background-image: url('../images/ve_phan_nu_icon.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                position: absolute;
+                top: calc(100% + 15px);
+                left: 0;
+                right: 0;
+                width: 62px;
+                height: 15px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.bannerAdsHome {
+    text-align: center;
+}
+
+.video-iframe {
+    display: block;
+    text-align: center;
+}
+
+.PrdSalesWrap {
+    background-image: url('../images/productsales_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    position: relative;
+    .block-productSalesList {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        padding-left: 15px;
+        max-width: 160px;
+        margin: 0 auto;
+        @include transform(translate(0,
+        -50%));
+        .slider {
+            .owl-controls {
+                position: relative;
+                margin: 10px auto 0;
+                text-align: center;
+                .owl-dot {
+                    margin: 0 5px;
+                    background-image: url('../images/slide.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    width: 12px;
+                    height: 13px;
+                    display: inline-block;
+                    &.active {
+                        background-image: url('../images/slide_active.png');
+                    }
+                }
+            }
+        }
+    }
+}
+
+.newsSpecialWrap {
+    background-image: url('../images/bg.png');
+    background-repeat: repeat;
+    background-position: 0 0;
+    position: relative;
+    text-align: center;
+}
+
+.newsSpecialWrap {
+    .title {
+        padding: 30px 0;
+        @include media-breakpoint-up(lg) {
+            padding: 10px 0;
+        }
+        @include media-breakpoint-up(xl) {
+            padding: 40px 0;
+        }
+    }
+}
+
+.news-special {
+    .item-nsc {
+        padding: 0 15px 35px;
+        h3 {
+            font-size: 12px;
+            font-weight: 700;
+            margin: 0 0 8px;
+            line-height: 1.213rem;
+            a {
+                color: $color-base;
+            }
+        }
+        .desc {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.213rem;
+            color: $color-base1;
+            position: relative;
+            &:after {
+                content: '';
+                background-image: url('../images/ve_phan_nu_icon.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                position: absolute;
+                top: calc(100% + 15px);
+                left: 0;
+                right: 0;
+                width: 62px;
+                height: 15px;
+                margin: 0 auto;
+            }
+        }
+    }
+    .slider {
+        .owl-controls {
+            position: relative;
+            margin: 10px auto 0;
+            text-align: center;
+            .owl-dot {
+                margin: 0 5px;
+                background-image: url('../images/slide.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 0 0;
+                width: 12px;
+                height: 13px;
+                display: inline-block;
+                &.active {
+                    background-image: url('../images/slide_active.png');
+                }
+            }
+        }
+    }
+}
+
+.groupProducts {
+    background-image: url('../images/footer_bg.png');
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 50px 0;
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    &:before {
+        content: '';
+        background-image: url('../images/lotus_footer.png');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: contain;
+        width: 227px;
+        height: 52px;
+        position: absolute;
+        top: calc(100% - 25px);
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+    @include media-breakpoint-up(md) {
+        &:after {
+            content: '';
+            background-image: url('../images/leaves_2.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: contain;
+            width: 256px;
+            height: 387px;
+            position: absolute;
+            top: 100%;
+            right: 0;
+        }
+    }
+    .block-groupProducts {
+        h1 {
+            font-size: 16px;
+            font-weight: 700;
+            color: $color-base;
+            line-height: 1;
+            margin: 0 0 40px;
+            position: relative;
+            text-transform: uppercase;
+            &:before {
+                content: '';
+                background-image: url('../images/leaves_leaf.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                width: 43px;
+                height: 14px;
+                position: absolute;
+                right: 0;
+                bottom: -5px;
+                z-index: 2;
+            }
+            &:after {
+                content: '';
+                background-image: url('../images/line.png');
+                background-repeat: repeat-x;
+                background-size: contain;
+                background-position: 0 0;
+                width: 100%;
+                height: 12px;
+                position: absolute;
+                right: 0;
+                z-index: 0;
+                left: 0;
+                top: 2px;
+            }
+            span {
+                position: relative;
+                background-image: url('../images/footer_bg.png');
+                background-repeat: no-repeat;
+                display: inline-block;
+                padding-right: 15px;
+                z-index: 2;
+                background-position: top center;
+                padding-left: 28px;
+                &:before {
+                    content: '';
+                    background-image: url('../images/leaf.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    width: 18px;
+                    height: 11px;
+                    position: absolute;
+                    top: 5px;
+                    left: 0;
+                }
+            }
+        }
+    }
+    .item-prdGroup {
+        background-image: url('../images/product_frame.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+        text-align: center;
+        figure {
+            margin: 0;
+            padding: 30px 40px;
+            > a {
+                display: block;
+                overflow: hidden;
+                padding: 15px 10px;
+            }
+            figcaption {
+                h3 {
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: $color-base;
+                    line-height: 1.213rem;
+                    min-height: 2rem;
+                    margin: 0 0 5px;
+                    a {
+                        text-decoration: none;
+                        @include transition(all 0.3s);
+                        &:hover,
+                        &:focus {
+                            color: $color-link1;
+                        }
+                    }
+                }
+            }
+            .price {
+                font-size: 16px;
+                font-weight: 700;
+                color: $color-main1;
+                line-height: 1.275rem;
+                margin: 0 0 5px;
+            }
+            a.btn-prd {
+                background-image: url('../images/btn_order.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: top center;
+                text-decoration: none;
+                color: $color-white;
+                height: 35px;
+                width: 100%;
+                line-height: 35px;
+                display: inline-block;
+                text-align: center;
+                margin: 0 auto;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.block-tabsProducts {
+    padding: 60px 0 30px;
+    .tabs-nav {
+        position: relative;
+        @include media-breakpoint-up(md) {
+            &:before {
+                content: '';
+                background-image: url('../images/leaves_leaf.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                width: 43px;
+                height: 14px;
+                position: absolute;
+                right: 0;
+                bottom: -5px;
+                z-index: 2;
+            }
+            &:after {
+                content: '';
+                background-image: url('../images/line.png');
+                background-repeat: repeat-x;
+                background-size: contain;
+                background-position: 0 0;
+                width: 100%;
+                height: 12px;
+                position: absolute;
+                right: 0;
+                z-index: 0;
+                left: 0;
+                top: 2px;
+            }
+        }
+    }
+    .nav-tabs {
+        border: none;
+        position: relative;
+        z-index: 2;
+        .nav-item {
+            margin: 0;
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid darken($color-main, 10%);
+            .nav-link {
+                border: none;
+                font-size: 16px;
+                font-weight: 700;
+                color: $color-base;
+                text-transform: uppercase;
+                padding: 10px 15px;
+                text-decoration: none;
+                position: relative;
+                background: $color-white;
+                &.active {
+                    color: $color-main3;
+                }
+            }
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+                width: auto;
+                border-bottom: none;
+                &:first-child {
+                    .nav-link {
+                        padding-left: 0;
+                        border-left: 0;
+                        &:before {
+                            content: '';
+                            background-image: url('../images/head1.png');
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: 0 0;
+                            width: 172px;
+                            height: 202px;
+                            position: absolute;
+                            top: 0;
+                            right: calc(100% + 10px);
+                        }
+                    }
+                }
+                .nav-link {
+                    padding: 0 10px;
+                    line-height: 1;
+                    border-left: 1px solid darken($color-white, 20%);
+                    @include transition(all 0.3s);
+                    &.active {
+                        &:after {
+                            content: '';
+                            background-image: url('../images/active_purple.png');
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: 0 0;
+                            width: 15px;
+                            height: 9px;
+                            position: absolute;
+                            top: calc(100% + 10px);
+                            left: 0;
+                            right: 0;
+                            margin: 0 auto;
+                            @include transition(all 0.3s);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 34em)
+// No media query since this is the default in Bootstrap
+// Small devices (landscape phones, 34em and up)
+@include media-breakpoint-up(sm) {}
+
+// Medium devices (tablets, 48em and up)
+@include media-breakpoint-up(md) {}
+
+// Large devices (desktops, 62em and up)
+@include media-breakpoint-up(lg) {}
+
+// Extra large devices (large desktops, 75em and up)
+@include media-breakpoint-up(xl) {}

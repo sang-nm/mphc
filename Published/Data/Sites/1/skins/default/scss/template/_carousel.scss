@@ -1,0 +1,104 @@
+/*CAROUSEL*/
+
+.block-slideShow {
+    .slider {
+        background-color: transparent;
+        @include media-breakpoint-up(lg) {
+            margin: 0;
+        }
+        .owl-carousel {
+            margin: 0;
+            .owl-stage-outer {
+                .item {
+                    figure {
+                        a {
+                            position: relative;
+                            z-index: 99;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .owl-controls {
+                .owl-nav {
+                    margin-bottom: 20px;
+                    text-align: center;
+                    @include media-breakpoint-up(lg) {
+                        margin: 0;
+                        position: absolute;
+                        top: 50%;
+                        margin: 0;
+                        padding: 0 0;
+                        left: 0;
+                        right: 0;
+                        text-align: none;
+                        @include transform(translate(0, -50%));
+                        @include opacity(0);
+                        @include transition(all 0.3s);
+                    }
+                    > div {
+                        @include border-radius(0);
+                        background: transparent;
+                        color: $color-white;
+                        position: relative;
+                        z-index: 100;
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        @include transition(all 0.4s);
+                        i {
+                            font-size: 28px;
+                            vertical-align: middle;
+                        }
+                        &:hover {
+                            background: transparent;
+                        }
+                    }
+                    .owl-prev {
+                        margin-right: 5px;
+                        @include media-breakpoint-up(lg) {
+                            float: left;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding: 0;
+                            position: relative;
+                            z-index: 400;
+                        }
+                    }
+                    .owl-next {
+                        @include media-breakpoint-up(lg) {
+                            float: right;
+                            margin-right: 0;
+                            padding: 0;
+                            position: relative;
+                            z-index: 400;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .owl-controls {
+                    .owl-nav {
+                        @include opacity(1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 34em)
+// No media query since this is the default in Bootstrap
+// Small devices (landscape phones, 34em and up)
+@include media-breakpoint-up(sm) {}
+
+// Medium devices (tablets, 48em and up)
+@include media-breakpoint-up(md) {}
+
+// Large devices (desktops, 62em and up)
+@include media-breakpoint-up(lg) {}
+
+// Extra large devices (large desktops, 75em and up)
+@include media-breakpoint-up(xl) {}

@@ -1,0 +1,176 @@
+/*BANNER*/
+
+.home-banner {
+    position: relative;
+    text-align: center;
+}
+
+.bannerHomeWrap {
+    position: relative;
+    a.scroll-down {
+        display: none;
+    }
+    @include media-breakpoint-up(md) {
+        a.scroll-down {
+            position: absolute;
+            bottom: 0;
+            display: block;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            z-index: 9;
+            &:after {
+                content: '';
+                background-image: url('../images/scroll_step.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 0 0;
+                width: 107px;
+                height: 54px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.block-bannerPage {
+    position: relative;
+    text-align: center;
+    .bannerPage {
+        figure {
+            margin: 0;
+            img {
+                display: none;
+                @include media-breakpoint-up(md) {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+            figcaption {
+                position: relative;
+                left: 0;
+                right: 0;
+                text-align: left;
+                @include media-breakpoint-up(md) {
+                    position: absolute;
+                    bottom: 20px;
+                }
+                @include media-breakpoint-up(xl) {
+                    bottom: 50px;
+                }
+                .caption {
+                    img {
+                        margin-bottom: 20px;
+                        display: block;
+                    }
+                    p {
+                        display: inline-block;
+                        margin: 0;
+                        font-size: 0.875rem;
+                        font-weight: 400;
+                        line-height: 1.275rem;
+                        color: $color-con1;
+                        position: relative;
+                        padding-left: 35px;
+                        padding-right: 25px;
+                        br {
+                            display: none;
+                        }
+                        @include media-breakpoint-up(md) {
+                            br {
+                                display: block;
+                            }
+                        }
+                        &:before {
+                            content: '';
+                            background-image: url('../images/quote_open.png');
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: 0 0;
+                            width: 33px;
+                            height: 26px;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+                        &:after {
+                            content: '';
+                            background-image: url('../images/quote_end.png');
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: 0 0;
+                            width: 33px;
+                            height: 26px;
+                            position: absolute;
+                            bottom: -5px;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(md) {
+        background-image: url('../images/footer_bg.png');
+        background-repeat: repeat;
+        background-position: 0 0;
+        padding: 20px 0;
+    }
+}
+
+.slick-dotted.slick-slider {
+    margin: 0;
+}
+
+.slick-slide {
+    img {
+        margin: 0 auto;
+    }
+}
+
+.slick-dots {
+    bottom: 15px;
+    max-width: 1140px;
+    text-align: left;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    li {
+        button {
+            margin: 0 5px;
+            background-image: url('../images/slide.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+            width: 12px;
+            height: 13px;
+            display: inline-block;
+            &:before {
+                display: none;
+            }
+        }
+        &.slick-active {
+            button {
+                background-image: url('../images/slide_active.png');
+            }
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 34em)
+// No media query since this is the default in Bootstrap
+// Small devices (landscape phones, 34em and up)
+@include media-breakpoint-up(sm) {}
+
+// Medium devices (tablets, 48em and up)
+@include media-breakpoint-up(md) {}
+
+// Large devices (desktops, 62em and up)
+@include media-breakpoint-up(lg) {}
+
+// Extra large devices (large desktops, 75em and up)
+@include media-breakpoint-up(xl) {}

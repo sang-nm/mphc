@@ -1,0 +1,68 @@
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\CanhCam.Features.News.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\CanhCam.Features.News.pdb
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Novell.Directory.Ldap.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Lucene.Net.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\DotNetOpenAuth.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Microsoft.ApplicationServer.Caching.Client.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Recaptcha.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Lucene.Net.Contrib.Analyzers.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Microsoft.ApplicationServer.Caching.Core.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\CanhCam.Web.Utilities.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Lucene.Net.Contrib.Highlighter.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\dotless.Core.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Subkismet.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\MetaDataExtractor.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\NPOI.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Brettle.Web.NeatHtmlTools.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Microsoft.WindowsFabric.Data.Common.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Microsoft.WindowsFabric.Common.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Lucene.Net.Contrib.Memory.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\ICSharpCode.SharpZipLib.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Argotic.Common.pdb
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Argotic.Common.xml
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Argotic.Core.pdb
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Argotic.Core.xml
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Argotic.Extensions.pdb
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\Argotic.Extensions.xml
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\bin\log4net.xml
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\obj\Release\CanhCam.Features.News.csprojResolveAssemblyReference.cache
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\obj\Release\CanhCam.Features.News.dll
+F:\Project\Source CMS\Source 2016\CanhCam.Features.News\obj\Release\CanhCam.Features.News.pdb
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Features.News.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Features.News.pdb
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Business.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Business.WebHelpers.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Data.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Net.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Web.Controls.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Web.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Web.Editor.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Web.Framework.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Novell.Directory.Ldap.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Lucene.Net.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\DotNetOpenAuth.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Microsoft.ApplicationServer.Caching.Client.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Recaptcha.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Lucene.Net.Contrib.Analyzers.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Microsoft.ApplicationServer.Caching.Core.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\CanhCam.Web.Utilities.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Lucene.Net.Contrib.Highlighter.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\dotless.Core.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Subkismet.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\MetaDataExtractor.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\NPOI.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Brettle.Web.NeatHtmlTools.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Microsoft.WindowsFabric.Data.Common.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Microsoft.WindowsFabric.Common.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Lucene.Net.Contrib.Memory.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\ICSharpCode.SharpZipLib.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Argotic.Common.pdb
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Argotic.Common.xml
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Argotic.Core.pdb
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Argotic.Core.xml
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Argotic.Extensions.pdb
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\Argotic.Extensions.xml
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\bin\log4net.xml
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\obj\Release\CanhCam.Features.News.csprojResolveAssemblyReference.cache
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\obj\Release\CanhCam.Features.News.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.News\obj\Release\CanhCam.Features.News.pdb

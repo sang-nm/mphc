@@ -1,0 +1,348 @@
+$color-main: #efbb35 !default;
+$color-main1: #469e14 !default;
+$color-main2: #c49c32 !default;
+$color-main3: #823b99 !default;
+$color-base: #222222 !default;
+$color-base1: #595959 !default;
+$color-base2: #8e6197 !default;
+$color-con: #717171 !default;
+$color-con1: #333333 !default;
+$color-con2: #666666 !default;
+$color-con3: #999999 !default;
+$color-hover: #efbb35 !default;
+$color-link: #efbb35 !default;
+$color-link1: #694571 !default;
+$color-bd: #ffcb08 !default;
+$color-bd1: #b6973d !default;
+$color-bg: #f4c448 !default;
+$color-bg1: #b78401 !default;
+$color-bg2: #fdf8e9 !default;
+$color-bg3: #f3f3f3 !default;
+$color-bg4: #fbf7ea !default;
+$header-bg: #333333 !default;
+$menu-width: 250px !default;
+
+$color-basic: #e5e5e5 !default;
+$color-info: #2d7091 !default;
+$color-success: #659f13 !default;
+$color-warning: #e28327 !default;
+$color-danger: #d85030 !default;
+$color-border: #dfdfdf !default;
+$color-turquoise: #1abc9c !default;
+$color-green-sea: #16a085 !default;
+$color-emerald: #2ecc71 !default;
+$color-nephritis: #27ae60 !default;
+$color-peter-river: #3498db !default;
+$color-belize-hole: #2980b9 !default;
+$color-amethyst: #9b59b6 !default;
+$color-wisteria: #8e44ad !default;
+$color-wet-ashpalt: #34495e !default;
+$color-midnight-blue: #2c3e50 !default;
+$color-sun-flower: #f1c40f !default;
+$color-orange: #f39c12 !default;
+$color-carrot: #e67e22 !default;
+$color-pumpkin: #d35400 !default;
+$color-alizarin: #e74c3c !default;
+$color-pomegranate: #c0392b !default;
+$color-clouds: #ecf0f1 !default;
+$color-silver: #bdc3c7 !default;
+$color-concrete: #95a5a6 !default;
+$color-asbestos: #7f8c8d !default;
+$color-white: #fff !default;
+$color-brown: #666 !default;
+$color-brown-black: #333 !default;
+$color-black: #000 !default;
+
+/* #Font size
+================================================== */
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+//Usage @include font-size(14px)
+// ADDS A BROWSER PREFIX TO THE PROPERTY
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -khtml-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+@mixin cutting-text($size:1, $type:1) {
+    $tempi: $size * $type;
+    overflow: initial;
+    -moz-overflow: initial;
+    -webkit-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: #{$type};
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+// BACKGROUND GRADIENT
+@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+    background-image: -moz-linear-gradient(top, $startColor, $endColor);
+    background-image: -ms-linear-gradient(top, $startColor, $endColor);
+    background-image: -o-linear-gradient(top, $startColor, $endColor);
+    background-image: linear-gradient(top, $startColor, $endColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
+}
+
+// BACKGROUND HORIZONTAL
+@mixin background-horizontal($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+    background-image: -moz-linear-gradient(left, $startColor, $endColor);
+    background-image: -ms-linear-gradient(left, $startColor, $endColor);
+    background-image: -o-linear-gradient(left, $startColor, $endColor);
+    background-image: linear-gradient(left, $startColor, $endColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
+}
+
+// BACKGROUND RADIAL
+@mixin background-radial($startColor: #FFFFFF, $startPos: 0%, $endColor: #000000, $endPos:100%) {
+    background: -moz-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop($startPos, $startColor), color-stop($endPos, $endColor));
+    background: -webkit-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
+    background: -o-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
+    background: -ms-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
+    background: radial-gradient(ellipse at center, $startColor $startPos, $endColor $endPos);
+}
+
+// BACKGROUND SIZE
+@mixin background-size($width: 100%, $height: $width) {
+    @if type-of($width)=='number' and $height !=null {
+        @include css3-prefix('background-size', $width $height);
+    }
+    @else {
+        @include css3-prefix('background-size', $width);
+    }
+}
+
+// BACKGROUND COLOR OPACITY
+@mixin background-opacity($color: #000, $opacity: 0.85) {
+    background: $color;
+    background: rgba($color, $opacity);
+}
+
+// BORDER RADIUS
+@mixin border-radius($radius: 5px) {
+    @include css3-prefix('border-radius', $radius);
+}
+
+@mixin border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomLeftRadius: 5px, $bottomRightRadius: 5px) {
+    -webkit-border-top-left-radius: $topLeftRadius;
+    -webkit-border-top-right-radius: $topRightRadius;
+    -webkit-border-bottom-right-radius: $bottomRightRadius;
+    -webkit-border-bottom-left-radius: $bottomLeftRadius;
+    -moz-border-radius-topleft: $topLeftRadius;
+    -moz-border-radius-topright: $topRightRadius;
+    -moz-border-radius-bottomright: $bottomRightRadius;
+    -moz-border-radius-bottomleft: $bottomLeftRadius;
+    border-top-left-radius: $topLeftRadius;
+    border-top-right-radius: $topRightRadius;
+    border-bottom-right-radius: $bottomRightRadius;
+    border-bottom-left-radius: $bottomLeftRadius;
+}
+
+// BOX
+@mixin box($orient: horizontal, $pack: center, $align: center) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    @include css3-prefix('box-orient', $orient);
+    @include css3-prefix('box-pack', $pack);
+    @include css3-prefix('box-align', $align);
+}
+
+// BOX RGBA
+@mixin box-rgba($r: 60, $g: 3, $b: 12, $opacity: 0.23, $color: #3C3C3C) {
+    background-color: transparent;
+    background-color: rgba($r, $g, $b, $opacity);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color}', endColorstr='#{$color}');
+    zoom: 1;
+}
+
+// BOX SHADOW
+@mixin box-shadowset($str) {
+    @include css3-prefix('box-shadow', $str);
+}
+
+// BOX SHADOW
+@mixin box-shadow ($str) {
+    -webkit-box-shadow: $str;
+    -moz-box-shadow: $str;
+    box-shadow: $str;
+}
+
+// BOX SIZING
+@mixin box-sizing($type: border-box) {
+    @include css3-prefix('box-sizing', $type);
+}
+
+// COLUMNS
+@mixin columns($count: 3, $gap: 10) {
+    @include css3-prefix('column-count', $count);
+    @include css3-prefix('column-gap', $gap);
+}
+
+// DOUBLE BORDERS
+@mixin double-borders($colorOne: #3C3C3C, $colorTwo: #999999, $radius: 0) {
+    border: 1px solid $colorOne;
+    @include css3-prefix('box-shadow', 0 0 0 1px $colorTwo);
+    @include border-radius( $radius);
+}
+
+// FLEX
+@mixin flex($value: 1) {
+    @include css3-prefix('box-flex', $value);
+}
+
+// FLIP
+@mixin flip($scaleX: -1) {
+    @include css3-prefix('transform', scaleX($scaleX));
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+// FONT FACE
+@mixin font-face($fontFamily: myFont, $eotFileSrc: 'myFont.eot', $woffFileSrc: 'myFont.woff', $ttfFileSrc: 'myFont.ttf', $svgFileSrc: 'myFont.svg', $svgFontID: '#myFont') {
+    font-family: $fontFamily;
+    src: url($eotFileSrc) format('eot'), url($woffFileSrc) format('woff'), url($ttfFileSrc) format('truetype'), url($svgFileSrc + $svgFontID) format('svg');
+}
+
+// OPACITY
+@mixin opacity($opacity: 0.5) {
+    $opacityMultiplied: ($opacity * 100);
+    filter: alpha(opacity=$opacityMultiplied);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityMultiplied + ")";
+    @include css3-prefix('opacity', $opacity);
+}
+
+// OUTLINE RADIUS
+@mixin outline-radius($radius: 5px) {
+    @include css3-prefix('outline-radius', $radius);
+}
+
+// RESIZE
+@mixin resize($direction: both) {
+    @include css3-prefix('resize', $direction);
+}
+
+// ROTATE
+@mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+    @include css3-prefix('transform', rotate($deg + deg));
+    filter: progid:DXImageTransform.Microsoft.Matrix( M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
+    zoom: 1;
+}
+
+// TEXT SHADOW
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, .4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+// TRANSFORM
+@mixin transform($params) {
+    @include css3-prefix('transform', $params);
+}
+
+// TRANSFORM-ORIGIN
+@mixin transform-origin($params) {
+    @include css3-prefix('transform-origin', $params);
+}
+
+// TRANSFORM STYLE
+@mixin transform-style($style: preserve-3d) {
+    @include css3-prefix('transform-style', $style);
+}
+
+// TRANSITION
+@mixin transition($properties...) {
+    @if length($properties) >=1 {
+        @include css3-prefix('transition', $properties);
+    }
+    @else {
+        @include css3-prefix('transition', "all 0.2s ease-in-out 0s");
+    }
+}
+
+// TRIPLE BORDERS
+@mixin triple-borders($colorOne: #3C3C3C, $colorTwo: #999999, $colorThree: #000000, $radius: 0) {
+    border: 1px solid $colorOne;
+    @include border-radius($radius);
+    @include css3-prefix('box-shadow', "0 0 0 1px #{$colorTwo}, 0 0 0 2px #{$colorThree}");
+}
+
+// KEYFRAMES
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+// ANIMATION
+@mixin animation($str) {
+    @include css3-prefix('animation', $str);
+}
+
+@mixin placeholderall {
+    &::-webkit-input-placeholder {
+        @content
+    }
+    &:-moz-placeholder {
+        @content
+    }
+    &::-moz-placeholder {
+        @content
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
+}
+
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    @include optional-at-root('::-webkit-input-placeholder') {
+        @content;
+    }
+    @include optional-at-root(':-moz-placeholder') {
+        @content;
+    }
+    @include optional-at-root('::-moz-placeholder') {
+        @content;
+    }
+    @include optional-at-root(':-ms-input-placeholder') {
+        @content;
+    }
+}

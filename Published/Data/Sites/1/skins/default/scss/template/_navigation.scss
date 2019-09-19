@@ -1,0 +1,247 @@
+/*NAVIGATION*/
+
+.rightMenuWrap {
+    position: relative;
+    margin-top: 140px;
+    &:before {
+        content: '';
+        background-image: url('../images/sidebar_top.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: calc(100% - 1px);
+        width: 260px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    &:after {
+        content: '';
+        background-image: url('../images/sidebar_bottom.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        width: 260px;
+        height: 53px;
+        margin: 0 auto;
+    }
+    @include media-breakpoint-up(lg) {
+        margin-top: -140px;
+    }
+}
+
+.block-rightMenu {
+    background-image: url('../images/sidebar_bg.png');
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: top center;
+    position: relative;
+    width: 230px;
+    margin: 0 auto;
+    @include media-breakpoint-up(lg) {
+        left: 15px;
+    }
+    @include media-breakpoint-up(xl) {
+        left: 3px;
+    }
+    h2 {
+        color: $color-con1;
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+        padding: 15px 0 40px;
+        margin: 0 0 20px;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        &:after {
+            content: '';
+            background-image: url('../images/sidebar_hor_line.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+        }
+    }
+    ul.nav {
+        li {
+            a {
+                display: block;
+                font-size: 0.813rem;
+                font-weight: 400;
+                line-height: 1.213rem;
+                margin: 0 0 20px;
+                padding: 0 0 15px;
+                color: $color-con1;
+                text-align: center;
+                position: relative;
+                text-transform: uppercase;
+                text-decoration: none;
+                @include transition(all 0.3s);
+                &:after {
+                    content: '';
+                    background-image: url('../images/active_purple.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    width: 15px;
+                    height: 9px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    @include opacity(0);
+                    @include transition(all 0.3s);
+                }
+                &:hover,
+                &:focus,
+                &.active {
+                    color: $color-link1;
+                    &:after {
+                        @include opacity(1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.block-productsMenu {
+    display: block;
+    position: relative;
+    z-index: 9;
+    margin: 0 0 30px;
+    @include media-breakpoint-up(md) {
+        display: inline-block;
+        height: 51px;
+        border-top: 2px solid #cdb160;
+        border-bottom: 2px solid #cdb160;
+        margin: 0 0 30px 15px;
+        &:before {
+            content: '';
+            background-image: url('../images/prdNav_left.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+            width: 11px;
+            height: 51px;
+            position: absolute;
+            top: -2px;
+            left: -11px;
+        }
+        &:after {
+            content: '';
+            background-image: url('../images/prdNav_right.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+            width: 11px;
+            height: 51px;
+            position: absolute;
+            top: -2px;
+            right: -11px;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        position: absolute;
+        right: 15px;
+        top: -10px;
+        margin: 0 11px;
+    }
+    ul {
+        @include media-breakpoint-up(md) {
+            padding-top: 10px;
+        }
+        li {
+            display: block;
+            border-bottom: 1px solid darken($color-white, 40%);
+            a {
+                display: block;
+                color: $color-con2;
+                font-size: 14px;
+                font-weight: 400;
+                text-transform: uppercase;
+                text-decoration: none;
+                position: relative;
+                line-height: 1.275rem;
+                padding: 10px 0;
+                &:hover,
+                &:focus,
+                &.active {
+                    color: $color-link1;
+                    font-weight: 700;
+                }
+            }
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+                border-bottom: none;
+                a {
+                    line-height: 1;
+                    padding: 0 15px;
+                    &:after {
+                        content: '';
+                        background-image: url('../images/active_purple.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: 0 0;
+                        width: 15px;
+                        height: 9px;
+                        position: absolute;
+                        top: calc(100% + 5px);
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        @include opacity(0);
+                        @include transition(all 0.3s);
+                    }
+                    &:hover,
+                    &:focus,
+                    &.active {
+                        color: $color-link1;
+                        font-weight: 400;
+                        &:after {
+                            @include opacity(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.productsAllLink {
+    .block-productsMenu ul li.allLink {
+        a {
+            color: $color-link1;
+            &:after {
+                @include opacity(1);
+            }
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 34em)
+// No media query since this is the default in Bootstrap
+// Small devices (landscape phones, 34em and up)
+@include media-breakpoint-up(sm) {}
+
+// Medium devices (tablets, 48em and up)
+@include media-breakpoint-up(md) {}
+
+// Large devices (desktops, 62em and up)
+@include media-breakpoint-up(lg) {}
+
+// Extra large devices (large desktops, 75em and up)
+@include media-breakpoint-up(xl) {}

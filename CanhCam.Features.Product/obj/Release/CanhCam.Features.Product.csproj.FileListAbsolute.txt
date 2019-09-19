@@ -1,0 +1,174 @@
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Features.Product.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Features.Product.pdb
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Argotic.Common.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Argotic.Core.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Argotic.Extensions.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Brettle.Web.NeatHtml.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Business.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Business.WebHelpers.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Data.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Net.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Web.Controls.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Web.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Web.Editor.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Web.Framework.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\HtmlDiff.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\log4net.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Newtonsoft.Json.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Telerik.Web.UI.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Novell.Directory.Ldap.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\DotNetOpenAuth.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Lucene.Net.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Recaptcha.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Ionic.Zip.Reduced.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Microsoft.ApplicationServer.Caching.Client.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Subkismet.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Microsoft.ApplicationServer.Caching.Core.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Analyzers.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\CanhCam.Web.Utilities.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\dotless.Core.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Highlighter.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\MetaDataExtractor.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\NPOI.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Brettle.Web.NeatHtmlTools.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Microsoft.WindowsFabric.Data.Common.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Microsoft.WindowsFabric.Common.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Memory.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\ICSharpCode.SharpZipLib.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Argotic.Common.pdb
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Argotic.Common.xml
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Argotic.Core.pdb
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Argotic.Core.xml
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Argotic.Extensions.pdb
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Argotic.Extensions.xml
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\log4net.xml
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\bin\Newtonsoft.Json.xml
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.csprojResolveAssemblyReference.cache
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.dll
+D:\Projects\CanhCam\CanhCam - 7.2.6.3\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.pdb
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Features.Product.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Features.Product.pdb
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Argotic.Common.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Argotic.Core.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Argotic.Extensions.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Brettle.Web.NeatHtml.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\HtmlDiff.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\log4net.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Newtonsoft.Json.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Telerik.Web.UI.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Novell.Directory.Ldap.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Lucene.Net.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\DotNetOpenAuth.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Microsoft.ApplicationServer.Caching.Client.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Ionic.Zip.Reduced.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Recaptcha.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\dotless.Core.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Analyzers.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Highlighter.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Web.Utilities.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Microsoft.ApplicationServer.Caching.Core.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Subkismet.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\MetaDataExtractor.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\NPOI.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Brettle.Web.NeatHtmlTools.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Microsoft.WindowsFabric.Data.Common.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Microsoft.WindowsFabric.Common.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Memory.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\ICSharpCode.SharpZipLib.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Argotic.Common.pdb
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Argotic.Common.xml
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Argotic.Core.pdb
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Argotic.Core.xml
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Argotic.Extensions.pdb
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Argotic.Extensions.xml
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\log4net.xml
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\Newtonsoft.Json.xml
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.pdb
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Business.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Business.WebHelpers.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Data.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Net.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Web.Controls.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Web.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Web.Editor.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\bin\CanhCam.Web.Framework.dll
+D:\Projects\2015\CanhCam - 7.2.6.3 - Copy\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.csprojResolveAssemblyReference.cache
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Features.Product.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Features.Product.pdb
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Argotic.Common.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Argotic.Core.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Argotic.Extensions.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Brettle.Web.NeatHtml.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Business.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Business.WebHelpers.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Data.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Net.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Web.Controls.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Web.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Web.Editor.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Web.Framework.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\HtmlDiff.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\log4net.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Newtonsoft.Json.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Telerik.Web.UI.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Novell.Directory.Ldap.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\DotNetOpenAuth.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Lucene.Net.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Microsoft.ApplicationServer.Caching.Client.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Ionic.Zip.Reduced.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Recaptcha.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Analyzers.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Microsoft.ApplicationServer.Caching.Core.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\dotless.Core.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Highlighter.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\CanhCam.Web.Utilities.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Subkismet.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\MetaDataExtractor.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\NPOI.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Brettle.Web.NeatHtmlTools.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Microsoft.WindowsFabric.Data.Common.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Microsoft.WindowsFabric.Common.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Memory.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\ICSharpCode.SharpZipLib.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Argotic.Common.pdb
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Argotic.Common.xml
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Argotic.Core.pdb
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Argotic.Core.xml
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Argotic.Extensions.pdb
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Argotic.Extensions.xml
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\log4net.xml
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\bin\Newtonsoft.Json.xml
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.csprojResolveAssemblyReference.cache
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.dll
+D:\Projects\2015\CanhCam - 7.2.6.5\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.pdb
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Features.Product.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Features.Product.pdb
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Business.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Business.WebHelpers.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Data.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Net.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Web.Controls.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Web.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Web.Editor.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Web.Framework.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\NPOI.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Novell.Directory.Ldap.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Lucene.Net.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\DotNetOpenAuth.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Microsoft.ApplicationServer.Caching.Client.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Recaptcha.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Analyzers.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Microsoft.ApplicationServer.Caching.Core.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\CanhCam.Web.Utilities.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Highlighter.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\dotless.Core.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Subkismet.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\MetaDataExtractor.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Brettle.Web.NeatHtmlTools.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\ICSharpCode.SharpZipLib.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Microsoft.WindowsFabric.Data.Common.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Microsoft.WindowsFabric.Common.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\bin\Lucene.Net.Contrib.Memory.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.dll
+F:\Project\MyPhamHoangCung\CanhCam.Features.Product\obj\Release\CanhCam.Features.Product.pdb

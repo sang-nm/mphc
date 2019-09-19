@@ -1,0 +1,47 @@
+/*ABOUT*/
+
+.title-page {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.9rem;
+    position: relative;
+    color: $color-con1;
+    padding-left: 35px;
+    margin: 0 0 1.875rem;
+    text-transform: uppercase;
+    &:after {
+        content: '';
+        background-image: url('../images/head1.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 0;
+        width: 172px;
+        height: 202px;
+        position: absolute;
+        top: 10px;
+        right: calc(100% - 25px);
+    }
+}
+
+.block-newsAbout {
+    .fullContent {
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.275rem;
+        color: $color-con1;
+    }
+}
+
+// Extra small devices (portrait phones, less than 34em)
+// No media query since this is the default in Bootstrap
+// Small devices (landscape phones, 34em and up)
+@include media-breakpoint-up(sm) {}
+
+// Medium devices (tablets, 48em and up)
+@include media-breakpoint-up(md) {}
+
+// Large devices (desktops, 62em and up)
+@include media-breakpoint-up(lg) {}
+
+// Extra large devices (large desktops, 75em and up)
+@include media-breakpoint-up(xl) {}

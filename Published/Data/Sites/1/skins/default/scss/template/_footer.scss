@@ -1,0 +1,337 @@
+/*FOOTER*/
+
+.footer {
+    background-color: $color-bg;
+    background-image: url('../images/footer_bg.png');
+    background-repeat: repeat;
+    background-position: 0 0;
+    position: relative;
+    padding: 3.75rem 0 1.875rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    &:after {
+        content: '';
+        background-image: url('../images/lotus_footer.png');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: contain;
+        width: 227px;
+        height: 52px;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+    @include media-breakpoint-up(md) {
+        &:before {
+            content: '';
+            background-image: url('../images/leaves.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: contain;
+            width: 236px;
+            height: 297px;
+            position: absolute;
+            top: -49px;
+            left: 0;
+        }
+    }
+}
+
+.ft-support {
+    text-align: center;
+    margin-bottom: 30px;
+    .item-support {
+        background-image: url("../images/support_bg.png");
+        background-repeat: no-repeat;
+        background-position: top center;
+        padding: 20px;
+        background-size: contain;
+        display: block;
+        width: 222px;
+        height: 219px;
+        margin: 0 auto;
+        position: relative;
+        figure {
+            margin: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            text-align: center;
+            padding: 20px;
+            @include transform(translate(0,
+            -50%));
+            .icon {
+                display: block;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            figcaption {
+                h3 {
+                    font-size: 0.875rem;
+                    font-weight: 400;
+                    line-height: 1.275rem;
+                    margin-bottom: 5px;
+                    color: $color-base;
+                }
+                .desc {
+                    color: $color-con;
+                    font-size: 0.813rem;
+                    font-weight: 400;
+                    line-height: 1.213rem;
+                }
+            }
+        }
+    }
+}
+
+.ft-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.275rem;
+    color: $color-base;
+    padding-left: 28px;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+    &:after {
+        content: '';
+        background-image: url('../images/leaf.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 0;
+        width: 18px;
+        height: 11px;
+        position: absolute;
+        top: 5px;
+        left: 0;
+    }
+}
+
+.ft-getmail {
+    font-size: 0.813rem;
+    font-weight: 400;
+    line-height: 1.213rem;
+    color: $color-base;
+}
+
+.subscribefrm {
+    width: 280px;
+    margin-top: 20px;
+    position: relative;
+    &:before {
+        content: '';
+        background-image: url('../images/getemail_iconl.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 0;
+        width: 17px;
+        height: 27px;
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        @include transform(translate(0,
+        -50%));
+    }
+    &:after {
+        content: '';
+        background-image: url('../images/getemail_iconr.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 0;
+        position: absolute;
+        width: 17px;
+        height: 27px;
+        top: 50%;
+        left: 100%;
+        @include transform(translate(0,
+        -50%));
+    }
+    input {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 60px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid $color-bg1;
+        background-color: transparent;
+        color: $color-bg1;
+        &::-webkit-input-placeholder {
+            color: $color-bg1;
+        }
+        &:-moz-placeholder {
+            color: $color-bg1;
+        }
+        &::-moz-placeholder {
+            color: $color-bg1;
+        }
+        &:-ms-input-placeholder {
+            color: $color-bg1;
+        }
+    }
+    .subscribebutton {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 40px;
+        line-height: 40px;
+        color: transparent;
+        text-align: center;
+        background-color: $color-bg1;
+        width: 50px;
+        border: none;
+        white-space: nowrap;
+        &:after {
+            content: '\f003';
+            font-family: "FontAwesome";
+            font-size: 24px;
+            color: $color-white;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translate(0, -50%);
+        }
+    }
+    .fa.fa-exclamation-triangle {
+        right: 60px;
+    }
+}
+
+.ft-iso {
+    margin-bottom: 40px;
+}
+
+.ft-social {
+    text-align: center;
+    position: relative;
+    &:after {
+        content: '';
+        background-image: url('../images/line.png');
+        background-repeat: repeat-x;
+        background-size: contain;
+        background-position: center center;
+        height: 12px;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 15px;
+        z-index: 0;
+    }
+    ul.nav {
+        position: relative;
+        z-index: 9;
+        li {
+            display: inline-block;
+            margin-right: 20px;
+            a {
+                display: block;
+                background-color: $color-bg1;
+                color: $color-white;
+                font-size: 18px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                @include border-radius(50%);
+                @include transition(all 0.3s);
+                &:hover,
+                &:focus {
+                    background-color: darken($color-bg1, 5%);
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.ft-menu {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    ul.nav {
+        text-align: center;
+        li {
+            display: block;
+            position: relative;
+            padding: 0 15px;
+            a {
+                color: $color-main3;
+                display: inline-block;
+                font-size: 0.813rem;
+                font-weight: 400;
+                line-height: 1.213rem;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: 7px 25px;
+                margin: 0;
+                position: relative;
+                @include transition(all 0.3s);
+                &:after {
+                    content: '';
+                    background-image: url('../images/leaf.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    width: 18px;
+                    height: 11px;
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                }
+            }
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+                a {
+                    padding: 0 0 0 25px;
+                    display: block;
+                    &:after {
+                        top: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ft-bot {
+    font-size: 0.813rem;
+    font-weight: 400;
+    ul.nav {
+        text-align: center;
+        li {
+            display: block;
+            margin: 10px 0;
+            .fa {
+                color: $color-bg1;
+                margin-right: 5px;
+            }
+            @include media-breakpoint-up(lg) {
+                display: inline-block;
+                margin: 0 25px 0 0;
+            }
+        }
+    }
+    .copyright {
+        margin-top: 5px;
+        text-align: center;
+    }
+}
+
+// Extra small devices (portrait phones, less than 34em)
+// No media query since this is the default in Bootstrap
+// Small devices (landscape phones, 34em and up)
+@include media-breakpoint-up(sm) {}
+
+// Medium devices (tablets, 48em and up)
+@include media-breakpoint-up(md) {}
+
+// Large devices (desktops, 62em and up)
+@include media-breakpoint-up(lg) {}
+
+// Extra large devices (large desktops, 75em and up)
+@include media-breakpoint-up(xl) {}

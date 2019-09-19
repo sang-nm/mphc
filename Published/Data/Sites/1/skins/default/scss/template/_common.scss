@@ -1,0 +1,498 @@
+/*COMMON*/
+
+
+/*Edit Manager*/
+
+.ActionMenu {
+    z-index: 99999 !important;
+    .ActionMenuTag {
+        .fa {
+            color: #1B4D79!important;
+            width: auto!important;
+            height: auto!important;
+            border: none!important;
+            font-size: 11px!important;
+            display: inline-block!important;
+            float: left!important;
+            border-radius: 0!important;
+            line-height: 1.1rem!important;
+            margin-right: 4px!important;
+        }
+    }
+    .ActionMenuBody {
+        z-index: 99999 !important;
+        > dl dd > a {
+            color: #1B4D79!important;
+            width: auto!important;
+            height: auto!important;
+            background: transparent;
+            .fa {
+                color: #1B4D79!important;
+                width: auto!important;
+                height: auto!important;
+                border: none!important;
+                font-size: 11px!important;
+                display: inline-block!important;
+                float: left!important;
+                border-radius: 0!important;
+                line-height: 1.1rem!important;
+                margin-right: 4px!important;
+            }
+        }
+        > h4 {
+            color: $color-black!important;
+        }
+    }
+}
+
+.cmsadminpanel {
+    z-index: 16000009;
+}
+
+
+/*Search Page*/
+
+.searchresults {
+    .home-banner {
+        display: none;
+    }
+}
+
+.search-page {
+    margin: 0 0 2.5rem;
+    .page-header {
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+    h1 {
+        font-size: 21px;
+        font-weight: 700;
+        margin: 0 0 15px;
+        text-transform: none;
+        line-height: 1.5em;
+        color: $color-main;
+        display: inline-block;
+    }
+    .btnSearchWrap {
+        position: relative;
+        .btnSearch {
+            @include opacity(1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            bottom: 0;
+            width: 34px;
+            .fa {
+                position: absolute;
+                right: 0;
+                display: block;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                margin: 0 auto;
+                width: 34px;
+                height: 34px;
+                line-height: 34px;
+                border: 1px solid darken($color-white, 15%);
+                vertical-align: middle;
+            }
+        }
+        .seachpage-btn {
+            position: relative;
+            height: 34px;
+            width: 34px;
+            @include opacity(0);
+        }
+    }
+    .btn {
+        background-color: $color-main;
+        color: $color-white;
+        border: none;
+        @include transition(all .3s);
+        &:hover,
+        &:focus {
+            background-color: $color-link;
+        }
+    }
+    .searchsummary {
+        margin: 10px 0 25px;
+        display: none;
+        strong {
+            color: $color-main;
+        }
+    }
+    .searchcontrols {
+        margin: 15px 0;
+        input[type="text"] {
+            height: 35px;
+            line-height: 35px;
+            padding: 0 15px;
+            border: 1px solid darken($color-white, 15%);
+            font-size: 0.9375rem;
+            color: $color-base;
+            @include border-radius(0);
+        }
+        input[type="submit"] {
+            border: none;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            padding: 0 20px;
+            color: $color-white;
+            background-color: $color-main1;
+        }
+    }
+    .searchresultlist {
+        margin-top: 20px;
+    }
+    .searchresult {
+        border-bottom: 1px solid darken($color-white, 15%);
+        margin: 0 0 15px;
+        padding: 0 0 15px;
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 10px;
+            color: $color-main;
+            a {
+                color: $color-main;
+                text-decoration: none;
+            }
+        }
+    }
+    hr {
+        display: none;
+    }
+}
+
+
+/*Social*/
+
+.social {
+    margin: 25px 0;
+    text-align: left;
+    clear: both;
+    &.sc-right {
+        text-align: right;
+    }
+    > div {
+        display: inline-block;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        vertical-align: top;
+    }
+    .google,
+    .tweet {
+        width: 60px;
+        margin-top: 4px;
+    }
+}
+
+
+/*Pagination*/
+
+.searchresults {
+    .pagination {
+        > li {
+            list-style: none;
+            display: inline-block;
+            text-align: left;
+            > a,
+            span {
+                font-size: 0.875rem;
+                font-weight: 500;
+                margin-left: 15px;
+                width: 37px;
+                height: 37px;
+                line-height: 37px;
+                display: block;
+                text-decoration: none;
+                text-align: center;
+                color: $color-base;
+                background-color: transparent;
+                @include border-radius(0);
+                @include transition(all 0.4s ease);
+                &:hover,
+                &:focus {
+                    color: $color-base;
+                    background-image: url('../images/page_active.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    width: 37px;
+                    height: 37px;
+                }
+            }
+            &.active {
+                >a,
+                span {
+                    background-image: url('../images/page_active.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    width: 37px;
+                    height: 37px;
+                    color: $color-base;
+                }
+            }
+            &:first-child {
+                a,
+                span {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+.pages {
+    @extend .searchresults;
+    text-align: left;
+}
+
+
+/*Register Form*/
+
+.subscribefrm {
+    position: relative;
+    .fa.fa-exclamation-triangle {
+        color: red;
+        font-size: 12px;
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        text-indent: -9999px;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        text-align: center;
+        &:after {
+            content: '\f071';
+            font-size: 12px;
+            color: red;
+            text-indent: 0;
+            float: left;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+        @include media-breakpoint-up(lg) {
+            right: 105px;
+            top: 10px;
+        }
+    }
+    .fa-exclamation-triangle:before,
+    .fa-warning:before {
+        margin-right: 5px;
+    }
+}
+
+.form-group {
+    position: relative;
+    .fa.fa-exclamation-triangle {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: transparent;
+        width: 15px;
+        height: 15px;
+        &:before {
+            content: '\f071';
+            font-size: 12px;
+            font-weight: 500;
+            color: red;
+            position: absolute;
+        }
+    }
+    .fa-exclamation-triangle:before,
+    .fa-warning:before {
+        margin-right: 5px;
+    }
+}
+
+.alert-success {
+    font-size: 0.875rem;
+    line-height: 1.275rem;
+    font-style: italic;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: lighten($color-success, 5%);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    margin: 0;
+    @include border-radius(0);
+}
+
+
+/*BREADCRUMB*/
+
+.breadcrumb_bg {
+    position: relative;
+    padding: 15px 0;
+    margin: 0;
+    text-align: left;
+    background-image: url('../images/bg.png');
+    background-repeat: repeat;
+    background-position: top center;
+    .breadcrumb {
+        display: block;
+        background: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0.813rem;
+        font-weight: 500;
+        line-height: 1.213rem;
+        position: relative;
+        li {
+            a {
+                color: $color-base2;
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+                &.active {
+                    color: $color-base2;
+                    font-weight: 500;
+                }
+            }
+            &:first-child {
+                a {
+                    position: relative;
+                    &:after {
+                        content: '\f015';
+                        font-family: "FontAwesome";
+                        font-weight: 500;
+                        font-size: 0.813rem;
+                        line-height: 1.213rem;
+                    }
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+        > li + li:before {
+            content: '\f105';
+            font-family: "FontAwesome";
+            color: $color-con;
+        }
+    }
+}
+
+.canhcam {
+    .fancybox-overlay {
+        @include media-breakpoint-up(xl) {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    }
+    #fancybox-thumbs.bottom {
+        bottom: 1rem;
+    }
+    .fancybox-close {
+        background: $color-link;
+        padding: 0;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        top: -15px;
+        right: -20px;
+        text-align: center;
+        @include transition(all 0.3s);
+        color: $color-white;
+        &:before {
+            content: '\f00d';
+            font-family: "FontAwesome";
+            display: inline-block;
+            font-size: 20px;
+            vertical-align: top;
+        }
+        &:hover {
+            background: darken($color-link, 5%);
+        }
+    }
+    .fancybox-nav {
+        top: 50%;
+        margin-top: -10px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background-color: $color-link;
+        color: $color-white;
+        text-align: center;
+        @include transition(all 0.3s);
+        span {
+            background: none;
+            width: 40px;
+            height: 40px;
+            top: 0;
+            left: 0;
+            margin: 0;
+        }
+        &.fancybox-prev {
+            left: 0;
+            z-index: 400;
+            &:before {
+                content: '\f104';
+                font-family: "FontAwesome";
+                display: inline-block;
+                font-size: 24px;
+                vertical-align: top;
+            }
+        }
+        &.fancybox-next {
+            right: 0;
+            z-index: 400;
+            &:before {
+                content: '\f105';
+                font-family: "FontAwesome";
+                display: inline-block;
+                font-size: 24px;
+                vertical-align: top;
+            }
+        }
+    }
+    .fancybox-opened {
+        z-index: 9999;
+    }
+}
+
+#fancybox-thumbs {
+    z-index: 10000;
+}
+
+.hidden {
+    display: none;
+}
+
+.row {
+    &.no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+        & > [class^="col-"],
+        & > [class*=" col-"] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 34em)
+// No media query since this is the default in Bootstrap
+// Small devices (landscape phones, 34em and up)
+@include media-breakpoint-up(sm) {}
+
+// Medium devices (tablets, 48em and up)
+@include media-breakpoint-up(md) {}
+
+// Large devices (desktops, 62em and up)
+@include media-breakpoint-up(lg) {}
+
+// Extra large devices (large desktops, 75em and up)
+@include media-breakpoint-up(xl) {}

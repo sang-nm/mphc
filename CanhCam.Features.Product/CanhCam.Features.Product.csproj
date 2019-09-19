@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E8D5A83-A845-4643-953D-D48B987C2C79}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CanhCam.Features.Product</RootNamespace>
+    <AssemblyName>CanhCam.Features.Product</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Argotic.Common, Version=2008.0.2.0, Culture=neutral, PublicKeyToken=84b2ce808fb02469, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\argotic\Argotic.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Argotic.Core, Version=2008.0.2.0, Culture=neutral, PublicKeyToken=84b2ce808fb02469, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\argotic\Argotic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Argotic.Extensions, Version=2008.0.2.0, Culture=neutral, PublicKeyToken=84b2ce808fb02469, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\argotic\Argotic.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Brettle.Web.NeatHtml, Version=1.0.3373.23565, Culture=neutral">
+      <HintPath>..\_libs\Brettle.Web.NeatHtml.dll</HintPath>
+    </Reference>
+    <Reference Include="CanhCam.Business, Version=1.0.4919.24305, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Published\bin\CanhCam.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="CanhCam.Business.WebHelpers">
+      <HintPath>..\Published\bin\CanhCam.Business.WebHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="CanhCam.Data">
+      <HintPath>..\Published\bin\CanhCam.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="CanhCam.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Published\bin\CanhCam.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="CanhCam.Web">
+      <HintPath>..\Published\bin\CanhCam.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="CanhCam.Web.Controls, Version=1.0.5073.26264, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Published\bin\CanhCam.Web.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CanhCam.Web.Editor">
+      <HintPath>..\Published\bin\CanhCam.Web.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="CanhCam.Web.Framework">
+      <HintPath>..\Published\bin\CanhCam.Web.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlDiff, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\HtmlDiff.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\log4net1-2-11\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\_libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Published\bin\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.UI, Version=2013.1.417.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_libs\Telerik\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\BirthdayList.aspx" />
+    <Content Include="Account\BirthdaySetting.ascx" />
+    <Content Include="Account\LoginGooglePlus.aspx" />
+    <Content Include="Account\UpdatePassword.aspx" />
+    <Content Include="Account\LoginFacebook.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\CustomerList.aspx" />
+    <Content Include="Account\UserProfile.aspx" />
+    <Content Include="App_GlobalResources\ProductResources.resx">
+      <SubType>Designer</SubType>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ProductResources.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Product\AdminCP\OrderEdit.aspx" />
+    <Content Include="Product\AdminCP\PaymentMethodEdit.aspx" />
+    <Content Include="Product\AdminCP\PaymentMethods.aspx" />
+    <Content Include="Product\Controls\CheckoutZonesSetting.ascx" />
+    <Content Include="Product\Controls\ParentZonesSetting.ascx" />
+    <Content Include="Product\AdminCP\ReviewList.aspx" />
+    <Content Include="Product\AdminCP\ReviewEdit.aspx" />
+    <Content Include="Product\CheckoutAddressModule.ascx" />
+    <Content Include="Product\CheckoutLoginModule.ascx" />
+    <Content Include="Product\CheckoutMethodModule.ascx" />
+    <Content Include="Product\OnePAYCallback.aspx" />
+    <Content Include="Product\OnePAYCallbackQT.aspx" />
+    <Content Include="Product\PurchaseHistory.aspx" />
+    <Content Include="Product\Services\CheckoutService.aspx" />
+    <Content Include="Product\ShoppingCartModule.ascx" />
+    <Content Include="Product\SearchResults.aspx" />
+    <Content Include="Product\Services\CommentService.asmx" />
+    <Content Include="Product\AdminCP\ShippingMethodEdit.aspx" />
+    <Content Include="Product\AdminCP\ShippingMethods.aspx" />
+    <Content Include="Product\Services\CartService.aspx" />
+    <Content Include="Product\AdminCP\TagBulkEdit.aspx" />
+    <Content Include="Product\AdminCP\OrderList.aspx" />
+    <Content Include="Product\AdminCP\ProductList.aspx" />
+    <Content Include="Product\AdminCP\ProductEdit.aspx" />
+    <Content Include="Product\Controls\AdminProductControl.ascx" />
+    <Content Include="Product\Controls\AdminProductEditControl.ascx" />
+    <Content Include="Product\Controls\CommentControl.ascx" />
+    <Content Include="Product\Controls\OrderDetailToolTipControl.ascx" />
+    <Content Include="Product\Controls\ProductSortBySetting.ascx" />
+    <Content Include="Product\Controls\ParentZoneSetting.ascx" />
+    <Content Include="Product\Controls\ProductDetailTemplatesSetting.ascx" />
+    <Content Include="Product\Controls\ProductPositionSetting.ascx" />
+    <Content Include="Product\Controls\ProductTemplatesSetting.ascx" />
+    <Content Include="Product\Controls\ProductListControl.ascx" />
+    <Content Include="Product\Controls\ProductViewControl.ascx" />
+    <Content Include="Product\Controls\ProductRelatedControl.ascx" />
+    <Content Include="Product\AdminCP\TagList.aspx" />
+    <Content Include="Product\AdminCP\ProductShowOption.aspx" />
+    <Content Include="Product\ProductFilterModule.ascx" />
+    <Content Include="Product\AdminCP\CustomFields.aspx" />
+    <Content Include="Product\AdminCP\CustomFieldEdit.aspx" />
+    <Content Include="Product\AdminCP\ProductSpecial.aspx" />
+    <Content Include="Product\AdminCP\ProductMove.aspx" />
+    <Content Include="Product\ProductSpecialModule.ascx" />
+    <Content Include="Product\ProductDetail.aspx" />
+    <Content Include="Product\ProductModule.ascx" />
+    <Content Include="Product\Services\ProductUrlSuggestService.ashx" />
+    <Content Include="Product\AdminCP\CartList.aspx" />
+    <Content Include="Product\ZoneProductModule.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\BirthdayList.aspx.cs">
+      <DependentUpon>BirthdayList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\BirthdayList.aspx.designer.cs">
+      <DependentUpon>BirthdayList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\BirthdaySetting.ascx.cs">
+      <DependentUpon>BirthdaySetting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\BirthdaySetting.ascx.designer.cs">
+      <DependentUpon>BirthdaySetting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\LoginGooglePlus.aspx.cs">
+      <DependentUpon>LoginGooglePlus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\LoginGooglePlus.aspx.designer.cs">
+      <DependentUpon>LoginGooglePlus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\UpdatePassword.aspx.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\UpdatePassword.aspx.designer.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\LoginFacebook.aspx.cs">
+      <DependentUpon>LoginFacebook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\LoginFacebook.aspx.designer.cs">
+      <DependentUpon>LoginFacebook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\CustomerList.aspx.cs">
+      <DependentUpon>CustomerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\CustomerList.aspx.designer.cs">
+      <DependentUpon>CustomerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ProductResources.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\OrderEdit.aspx.cs">
+      <DependentUpon>OrderEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\OrderEdit.aspx.designer.cs">
+      <DependentUpon>OrderEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\PaymentMethodEdit.aspx.cs">
+      <DependentUpon>PaymentMethodEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\PaymentMethodEdit.aspx.designer.cs">
+      <DependentUpon>PaymentMethodEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\PaymentMethods.aspx.cs">
+      <DependentUpon>PaymentMethods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\PaymentMethods.aspx.designer.cs">
+      <DependentUpon>PaymentMethods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Business\PaymentMethod.cs" />
+    <Compile Include="Product\Business\Coupon.cs" />
+    <Compile Include="Product\Business\CouponAppliedToItem.cs" />
+    <Compile Include="Product\Business\CouponUsageHistory.cs" />
+    <Compile Include="Product\Business\ShippingMethod.cs" />
+    <Compile Include="Product\Business\ShippingTableRate.cs" />
+    <Compile Include="Product\Business\SiteUserEx.cs" />
+    <Compile Include="Product\Business\Tag.cs" />
+    <Compile Include="Product\Business\TagItem.cs" />
+    <Compile Include="Product\Components\CartDisplaySettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Product\Components\CommentHelper.cs" />
+    <Compile Include="Product\Components\NotifyUserRegisteredHandler.cs" />
+    <Compile Include="Product\Components\OnePay\OnePayHelper.cs" />
+    <Compile Include="Product\Components\OnePay\VPCRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Product\Components\ProductAttributeParser.cs" />
+    <Compile Include="Product\Controls\CheckoutZonesSetting.ascx.cs">
+      <DependentUpon>CheckoutZonesSetting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\CheckoutZonesSetting.ascx.designer.cs">
+      <DependentUpon>CheckoutZonesSetting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\ParentZonesSetting.ascx.cs">
+      <DependentUpon>ParentZonesSetting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\ParentZonesSetting.ascx.designer.cs">
+      <DependentUpon>ParentZonesSetting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\ShoppingCartLink.cs" />
+    <Compile Include="Product\CheckoutAddressModule.ascx.cs">
+      <DependentUpon>CheckoutAddressModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\CheckoutAddressModule.ascx.designer.cs">
+      <DependentUpon>CheckoutAddressModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\CheckoutLoginModule.ascx.cs">
+      <DependentUpon>CheckoutLoginModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\CheckoutLoginModule.ascx.designer.cs">
+      <DependentUpon>CheckoutLoginModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\CheckoutMethodModule.ascx.cs">
+      <DependentUpon>CheckoutMethodModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\CheckoutMethodModule.ascx.designer.cs">
+      <DependentUpon>CheckoutMethodModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Data\DBPaymentMethod.cs" />
+    <Compile Include="Product\Data\DBCoupon.cs" />
+    <Compile Include="Product\Data\DBCouponAppliedToItem.cs" />
+    <Compile Include="Product\Data\DBCouponUsageHistory.cs" />
+    <Compile Include="Product\Data\DBSiteUserEx.cs" />
+    <Compile Include="Product\OnePAYCallback.aspx.cs">
+      <DependentUpon>OnePAYCallback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\OnePAYCallback.aspx.designer.cs">
+      <DependentUpon>OnePAYCallback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\OnePAYCallbackQT.aspx.cs">
+      <DependentUpon>OnePAYCallbackQT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\OnePAYCallbackQT.aspx.designer.cs">
+      <DependentUpon>OnePAYCallbackQT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\PurchaseHistory.aspx.cs">
+      <DependentUpon>PurchaseHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\PurchaseHistory.aspx.designer.cs">
+      <DependentUpon>PurchaseHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Services\CheckoutService.aspx.cs">
+      <DependentUpon>CheckoutService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\ShoppingCartModule.ascx.cs">
+      <DependentUpon>ShoppingCartModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\ShoppingCartModule.ascx.designer.cs">
+      <DependentUpon>ShoppingCartModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Data\DBShippingMethod.cs" />
+    <Compile Include="Product\Data\DBShippingTableRate.cs" />
+    <Compile Include="Product\AdminCP\ReviewList.aspx.cs">
+      <DependentUpon>ReviewList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\ReviewList.aspx.designer.cs">
+      <DependentUpon>ReviewList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\ReviewEdit.aspx.cs">
+      <DependentUpon>ReviewEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\ReviewEdit.aspx.designer.cs">
+      <DependentUpon>ReviewEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\SearchResults.aspx.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\SearchResults.aspx.designer.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Services\CommentService.asmx.cs">
+      <DependentUpon>CommentService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Product\Services\CartService.aspx.cs">
+      <DependentUpon>CartService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Services\SearchCountResult.ashx.cs">
+      <DependentUpon>SearchCountResult.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\ShippingMethodEdit.aspx.cs">
+      <DependentUpon>ShippingMethodEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\ShippingMethodEdit.aspx.designer.cs">
+      <DependentUpon>ShippingMethodEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\ShippingMethods.aspx.cs">
+      <DependentUpon>ShippingMethods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\ShippingMethods.aspx.designer.cs">
+      <DependentUpon>ShippingMethods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Data\DBTag.cs" />
+    <Compile Include="Product\Data\DBTagItem.cs" />
+    <Compile Include="Product\AdminCP\TagBulkEdit.aspx.cs">
+      <DependentUpon>TagBulkEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\TagBulkEdit.aspx.designer.cs">
+      <DependentUpon>TagBulkEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\ProductEdit.aspx.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\ProductEdit.aspx.designer.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Business\ProductComment.cs" />
+    <Compile Include="Product\Business\CustomFieldOption.cs" />
+    <Compile Include="Product\Business\CustomField.cs" />
+    <Compile Include="Product\Business\OrderItem.cs" />
+    <Compile Include="Product\Business\Order.cs" />
+    <Compile Include="Product\Business\ProductProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Product\Business\ProductSortingEnum.cs" />
+    <Compile Include="Product\Business\ShoppingCartItem.cs" />
+    <Compile Include="Product\Business\Product.cs" />
+    <Compile Include="Product\Components\ProductIndexBuilderProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Product\Components\ProductConfiguration.cs" />
+    <Compile Include="Product\Components\ProductDisplaySettings.cs" />
+    <Compile Include="Product\Components\ProductHelper.cs" />
+    <Compile Include="Product\Components\ProductPermission.cs" />
+    <Compile Include="Product\Components\SitePreDeleteProductHandler.cs" />
+    <Compile Include="Product\Components\CartHelper.cs" />
+    <Compile Include="Product\Components\CustomFieldHelper.cs" />
+    <Compile Include="Product\Controls\AdminProductControl.ascx.cs">
+      <DependentUpon>AdminProductControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\AdminProductControl.ascx.designer.cs">
+      <DependentUpon>AdminProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\AdminProductEditControl.ascx.cs">
+      <DependentUpon>AdminProductEditControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\AdminProductEditControl.ascx.designer.cs">
+      <DependentUpon>AdminProductEditControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\CommentControl.ascx.cs">
+      <DependentUpon>CommentControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\CommentControl.ascx.designer.cs">
+      <DependentUpon>CommentControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\OrderDetailToolTipControl.ascx.cs">
+      <DependentUpon>OrderDetailToolTipControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\OrderDetailToolTipControl.ascx.designer.cs">
+      <DependentUpon>OrderDetailToolTipControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\ProductSortBySetting.ascx.cs">
+      <DependentUpon>ProductSortBySetting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\ProductSortBySetting.ascx.designer.cs">
+      <DependentUpon>ProductSortBySetting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\ParentZoneSetting.ascx.cs">
+      <DependentUpon>ParentZoneSetting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\ParentZoneSetting.ascx.designer.cs">
+      <DependentUpon>ParentZoneSetting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\ProductDetailTemplatesSetting.ascx.cs">
+      <DependentUpon>ProductDetailTemplatesSetting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\ProductDetailTemplatesSetting.ascx.designer.cs">
+      <DependentUpon>ProductDetailTemplatesSetting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\ProductPositionSetting.ascx.cs">
+      <DependentUpon>ProductPositionSetting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\ProductPositionSetting.ascx.designer.cs">
+      <DependentUpon>ProductPositionSetting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\ProductTemplatesSetting.ascx.cs">
+      <DependentUpon>ProductTemplatesSetting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\ProductTemplatesSetting.ascx.designer.cs">
+      <DependentUpon>ProductTemplatesSetting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\ProductListControl.ascx.cs">
+      <DependentUpon>ProductListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\ProductListControl.ascx.designer.cs">
+      <DependentUpon>ProductListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\ProductViewControl.ascx.cs">
+      <DependentUpon>ProductViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\ProductViewControl.ascx.designer.cs">
+      <DependentUpon>ProductViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Controls\ProductRelatedControl.ascx.cs">
+      <DependentUpon>ProductRelatedControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Controls\ProductRelatedControl.ascx.designer.cs">
+      <DependentUpon>ProductRelatedControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Services\SuggestSearch.ashx.cs">
+      <DependentUpon>SuggestSearch.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\TagList.aspx.cs">
+      <DependentUpon>TagList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\TagList.aspx.designer.cs">
+      <DependentUpon>TagList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\ProductShowOption.aspx.cs">
+      <DependentUpon>ProductShowOption.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\ProductShowOption.aspx.designer.cs">
+      <DependentUpon>ProductShowOption.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Data\DBProductComment.cs" />
+    <Compile Include="Product\ProductFilterModule.ascx.cs">
+      <DependentUpon>ProductFilterModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\ProductFilterModule.ascx.designer.cs">
+      <DependentUpon>ProductFilterModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\CustomFields.aspx.cs">
+      <DependentUpon>CustomFields.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\CustomFields.aspx.designer.cs">
+      <DependentUpon>CustomFields.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Data\DBCustomFieldOption.cs" />
+    <Compile Include="Product\Data\DBCustomField.cs" />
+    <Compile Include="Product\Data\DBOrderItem.cs" />
+    <Compile Include="Product\Data\DBOrder.cs" />
+    <Compile Include="Product\Data\DBProductProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Product\Data\DBShoppingCartItem.cs" />
+    <Compile Include="Product\Data\DBProduct.cs" />
+    <Compile Include="Product\AdminCP\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\CustomFieldEdit.aspx.cs">
+      <DependentUpon>CustomFieldEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\CustomFieldEdit.aspx.designer.cs">
+      <DependentUpon>CustomFieldEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\ProductSpecial.aspx.cs">
+      <DependentUpon>ProductSpecial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\ProductSpecial.aspx.designer.cs">
+      <DependentUpon>ProductSpecial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\AdminCP\ProductMove.aspx.cs">
+      <DependentUpon>ProductMove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\ProductMove.aspx.designer.cs">
+      <DependentUpon>ProductMove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductSpecialModule.ascx.cs">
+      <DependentUpon>ProductSpecialModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\ProductSpecialModule.ascx.designer.cs">
+      <DependentUpon>ProductSpecialModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductModule.ascx.cs">
+      <DependentUpon>ProductModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\ProductModule.ascx.designer.cs">
+      <DependentUpon>ProductModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Services\CompareService.ashx.cs">
+      <DependentUpon>CompareService.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Services\ProductUrlSuggestService.ashx.cs">
+      <DependentUpon>ProductUrlSuggestService.ashx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\CartList.aspx.cs">
+      <DependentUpon>CartList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\AdminCP\CartList.aspx.designer.cs">
+      <DependentUpon>CartList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ZoneProductModule.ascx.cs">
+      <DependentUpon>ZoneProductModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\ZoneProductModule.ascx.designer.cs">
+      <DependentUpon>ZoneProductModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Product\Services\CompareService.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Product\Services\SuggestSearch.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Product\Services\SearchCountResult.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4267</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s /y /d "$(ProjectDir)bin\CanhCam.Features.Product.dll" "$(SolutionDir)Published\bin\"
+xcopy /s /y /d "$(ProjectDir)App_GlobalResources\*.resx" "$(SolutionDir)Published\App_GlobalResources\"
+
+xcopy /s /y /d "$(ProjectDir)Product\*.aspx" "$(SolutionDir)Published\Product\"
+xcopy /s /y /d "$(ProjectDir)Product\*.ascx" "$(SolutionDir)Published\Product\"
+xcopy /s /y /d "$(ProjectDir)Product\*.ashx" "$(SolutionDir)Published\Product\"
+
+xcopy /s /y /d "$(ProjectDir)Account\*.aspx" "$(SolutionDir)Published\Account\"
+xcopy /s /y /d "$(ProjectDir)Account\*.ascx" "$(SolutionDir)Published\Account\"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+</Project>

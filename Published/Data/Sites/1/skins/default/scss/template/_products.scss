@@ -1,0 +1,562 @@
+/*PRODUCTS*/
+
+.bar-notification {
+    display: none;
+}
+
+.item-prd {
+    text-align: center;
+    figure {
+        margin: 0;
+        padding: 15px 0;
+        @include media-breakpoint-up(md) {
+            padding: 30px;
+        }
+        > a {
+            display: block;
+            overflow: hidden;
+            padding: 15px 10px;
+            margin-bottom: 20px;
+        }
+        figcaption {
+            h3 {
+                font-size: 13px;
+                font-weight: 400;
+                color: $color-base;
+                line-height: 1.213rem;
+                min-height: 2.5rem;
+                margin: 0 0 5px;
+                a {
+                    text-decoration: none;
+                    @include transition(all 0.3s);
+                    &:hover,
+                    &:focus {
+                        color: $color-link1;
+                    }
+                }
+            }
+        }
+        .price {
+            font-size: 16px;
+            font-weight: 700;
+            color: $color-main2;
+            line-height: 1.275rem;
+            margin: 0 0 10px;
+        }
+        a.btn-prd {
+            background-image: url('../images/btn_order.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top center;
+            text-decoration: none;
+            color: $color-white;
+            height: 35px;
+            width: 100%;
+            line-height: 35px;
+            display: inline-block;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+    }
+}
+
+.productsInfoWrap {
+    padding: 40px 0;
+    .gallery {
+        padding: 0 40px;
+    }
+}
+
+.prd-content {
+    position: relative;
+    h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: $color-base;
+        margin: 0 0 15px;
+        line-height: 1.9rem;
+        position: relative;
+        padding-left: 28px;
+        &:after {
+            content: '';
+            background-image: url('../images/leaf.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+            width: 18px;
+            height: 11px;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+    }
+    .boxWrap {
+        position: relative;
+        &:before {
+            content: '';
+            background-image: url('../images/arrow_1.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+            position: absolute;
+            width: 36px;
+            height: 34px;
+            top: 5px;
+            left: 5px;
+            z-index: 2;
+        }
+        &:after {
+            content: '';
+            background-image: url('../images/arrow_2.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+            position: absolute;
+            width: 36px;
+            height: 34px;
+            top: 5px;
+            right: 5px;
+            z-index: 2;
+        }
+        .boxInfo {
+            position: relative;
+            padding: 30px;
+            background-color: $color-bg3;
+            border: 1px solid $color-bd;
+            @include border-radius(10px);
+            &:before {
+                content: '';
+                background-image: url('../images/arrow_3.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 0 0;
+                position: absolute;
+                width: 36px;
+                height: 34px;
+                bottom: 5px;
+                left: 5px;
+            }
+            &:after {
+                content: '';
+                background-image: url('../images/arrow_4.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 0 0;
+                width: 36px;
+                height: 34px;
+                bottom: 5px;
+                right: 5px;
+                position: absolute;
+            }
+            .brief {
+                font-size: 14px;
+                font-weight: 400;
+                color: $color-con2;
+                line-height: 1.275rem;
+            }
+            .code {
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 1.275rem;
+                display: block;
+                margin: 10px 0;
+                color: $color-base;
+                text-transform: uppercase;
+            }
+            .fullContent {
+                font-size: 14px;
+                font-weight: 500;
+                color: $color-base;
+                line-height: 1.275rem;
+                h4 {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $color-base;
+                    line-height: 1.4rem;
+                    position: relative;
+                    padding-left: 22px;
+                    margin-top: 10px;
+                    &:after {
+                        content: '';
+                        background-image: url('../images/leaf_small.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: 0 0;
+                        width: 16px;
+                        height: 12px;
+                        position: absolute;
+                        top: 5px;
+                        left: 0;
+                    }
+                    strong {
+                        color: $color-link1;
+                    }
+                }
+            }
+            .price {
+                font-size: 22px;
+                font-weight: 700;
+                color: $color-con2;
+                display: block;
+                margin-top: 20px;
+                margin-bottom: 15px;
+                .price-text {
+                    color: $color-main1;
+                }
+            }
+            .btn-orderCart {
+                .prd-option {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 15px;
+                    @include media-breakpoint-down(sm){
+                        margin-bottom: 15px;
+                    }
+                    label {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: $color-con2;
+                        margin: 0;
+                        display: inline-block;
+                    }
+                    .input-number {
+                        width: 45px;
+                        display: inline-block;
+                        input {
+                            width: 100%;
+                            display: block;
+                            border: 1px solid darken($color-white, 15%);
+                            font-size: 13px;
+                            color: $color-base;
+                            text-align: center;
+                            padding: 5px 0;
+                            @include border-radius(3px);
+                        }
+                    }
+                }
+                .prd-cart-button {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 140px;
+                    .btn-cart {
+                        background-image: url('../images/btn_order.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: top center;
+                        text-decoration: none;
+                        color: $color-white;
+                        height: 35px;
+                        width: 100%;
+                        line-height: 35px;
+                        display: inline-block;
+                        text-align: center;
+                        margin: 0 auto;
+                        font-size: 14px;
+                        @include media-breakpoint-down(sm){
+                            background-size: cover;
+                            @include border-radius(0 10px 0 10px);
+                        }
+                    }
+                }
+            }
+            .social {
+                margin: 20px 0 0;
+            }
+        }
+    }
+}
+
+.prd-desc {
+    margin-bottom: 30px;
+    .nav-tabs {
+        border: none;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 40px;
+        .nav-item {
+            margin: 0;
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid darken($color-main, 15%);
+            @include media-breakpoint-up(lg) {
+                border-bottom: none;
+            }
+            .nav-link {
+                border: none;
+                font-size: 16px;
+                font-weight: 600;
+                color: $color-base;
+                text-transform: uppercase;
+                text-decoration: none;
+                position: relative;
+                line-height: 1.4rem;
+                background: $color-white;
+                @include transition(all 0.3s);
+                &.active {
+                    color: $color-main3;
+                }
+            }
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+                width: auto;
+                .nav-link {
+                    padding: 0 15px;
+                    line-height: 1;
+                    &.active {
+                        &:after {
+                            content: '';
+                            background-image: url('../images/active_purple.png');
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: 0 0;
+                            width: 15px;
+                            height: 9px;
+                            position: absolute;
+                            top: calc(100% + 7px);
+                            left: 0;
+                            right: 0;
+                            margin: 0 auto;
+                            @include transition(all 0.3s);
+                        }
+                    }
+                }
+                &:first-child {
+                    .nav-link {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .tab-content {
+        .contentFull {
+            position: relative;
+            font-size: 14px;
+            line-height: 1.275rem;
+            color: $color-base;
+            &:before {
+                content: '';
+                background-image: url('../images/arrow_1.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 0 0;
+                position: absolute;
+                width: 36px;
+                height: 34px;
+                top: 5px;
+                left: 5px;
+                z-index: 2;
+            }
+            &:after {
+                content: '';
+                background-image: url('../images/arrow_2.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 0 0;
+                position: absolute;
+                width: 36px;
+                height: 34px;
+                top: 5px;
+                right: 5px;
+                z-index: 2;
+            }
+            .contentWrap {
+                position: relative;
+                padding: 40px;
+                background-color: $color-bg3;
+                border: 1px solid $color-bd;
+                @include border-radius(10px);
+                &:before {
+                    content: '';
+                    background-image: url('../images/arrow_3.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    position: absolute;
+                    width: 36px;
+                    height: 34px;
+                    bottom: 5px;
+                    left: 5px;
+                }
+                &:after {
+                    content: '';
+                    background-image: url('../images/arrow_4.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    width: 36px;
+                    height: 34px;
+                    bottom: 5px;
+                    right: 5px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+.block-productsMore {
+    > h3 {
+        font-size: 16px;
+        font-weight: 700;
+        color: $color-base;
+        line-height: 1;
+        margin: 0 0 30px;
+        position: relative;
+        text-transform: uppercase;
+        &:before {
+            content: '';
+            background-image: url('../images/leaves_leaf.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            width: 43px;
+            height: 14px;
+            position: absolute;
+            right: 0;
+            bottom: -5px;
+            z-index: 2;
+        }
+        &:after {
+            content: '';
+            background-image: url('../images/line.png');
+            background-repeat: repeat-x;
+            background-size: contain;
+            background-position: 0 0;
+            width: 100%;
+            height: 12px;
+            position: absolute;
+            right: 0;
+            z-index: 0;
+            left: 0;
+            top: 2px;
+        }
+        span {
+            position: relative;
+            background-image: url('../images/bg.png');
+            background-repeat: no-repeat;
+            background-color: $color-white;
+            display: inline-block;
+            padding-right: 15px;
+            z-index: 2;
+            background-position: top center;
+            padding-left: 35px;
+            &:before {
+                content: '';
+                background-image: url('../images/head1.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 0 0;
+                width: 172px;
+                height: 202px;
+                position: absolute;
+                top: 0;
+                right: calc(100% - 25px);
+            }
+        }
+    }
+}
+
+.block-slideShowWrap {
+    margin: 0 0 30px;
+}
+
+.block-slideShow {
+    h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.4rem;
+        margin: 0 0 15px;
+        color: $color-base;
+        text-transform: uppercase;
+        padding-left: 30px;
+        position: relative;
+        &:before {
+            content: '';
+            background-image: url('../images/leaf.png');
+            background-size: contain;
+            background-position: 0 0;
+            width: 18px;
+            height: 11px;
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 0;
+        }
+    }
+    .sliderBox {
+        border: 2px solid $color-bd;
+        @include border-radius(5px);
+        position: relative;
+        &:before {
+            content: '';
+            background-image: url('../images/arrow_1.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+            position: absolute;
+            width: 36px;
+            height: 34px;
+            top: 5px;
+            left: 5px;
+            z-index: 2;
+        }
+        &:after {
+            content: '';
+            background-image: url('../images/arrow_2.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+            position: absolute;
+            width: 36px;
+            height: 34px;
+            top: 5px;
+            right: 5px;
+            z-index: 2;
+        }
+        .slider {
+            position: relative;
+            &:before {
+                content: '';
+                background-image: url('../images/arrow_3.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 0 0;
+                position: absolute;
+                width: 36px;
+                height: 34px;
+                bottom: 5px;
+                left: 5px;
+                z-index: 9;
+            }
+            &:after {
+                content: '';
+                background-image: url('../images/arrow_4.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 0 0;
+                width: 36px;
+                height: 34px;
+                bottom: 5px;
+                right: 5px;
+                position: absolute;
+                z-index: 9;
+            }
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 34em)
+// No media query since this is the default in Bootstrap
+// Small devices (landscape phones, 34em and up)
+@include media-breakpoint-up(sm) {}
+
+// Medium devices (tablets, 48em and up)
+@include media-breakpoint-up(md) {}
+
+// Large devices (desktops, 62em and up)
+@include media-breakpoint-up(lg) {}
+
+// Extra large devices (large desktops, 75em and up)
+@include media-breakpoint-up(xl) {}

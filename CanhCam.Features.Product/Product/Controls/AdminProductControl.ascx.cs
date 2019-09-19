@@ -1,0 +1,524 @@
+﻿/// Author:			        Tran Quoc Vuong - itqvuong@gmail.com - tqvuong263@yahoo.com
+/// Created:				2014-08-02
+/// Last Modified:			2014-08-02
+
+using log4net;
+using CanhCam.Business;
+using CanhCam.Business.WebHelpers;
+using CanhCam.SearchIndex;
+using CanhCam.Web.Framework;
+using Resources;
+using System;
+using System.Web.UI.WebControls;
+using Telerik.Web.UI;
+using System.Web.UI;
+
+namespace CanhCam.Web.ProductUI
+{
+    public partial class AdminProductControl : UserControl
+    {
+        #region Private Properties
+
+        private static readonly ILog log = LogManager.GetLogger(typeof(AdminProductControl));
+
+        RadGridSEOPersister gridPersister;
+
+        protected SiteSettings siteSettings;
+        protected CmsBasePage basePage;
+        protected string siteRoot = string.Empty;
+
+        private bool isAllowedZone = false;
+        protected Double timeOffset = 0;
+        private TimeZoneInfo timeZone = null;
+        private bool canEditAnything = false;
+        private bool canUpdate = false;
+
+        private SiteUser currentUser = null;
+        private string startZone = string.Empty;
+
+        private int productType = -1;
+        private string pageTitle = ProductResources.ProductListTitle;
+        private string pageUrl = "/Product/AdminCP/ProductList.aspx";
+        private string editPageUrl = "/Product/AdminCP/ProductEdit.aspx";
+
+        #endregion
+
+        #region Public Properties
+
+        public int ProductType
+        {
+            get { return productType; }
+            set { productType = value; }
+        }
+
+        public string PageTitle
+        {
+            get { return pageTitle; }
+            set { pageTitle = value; }
+        }
+
+        public string PageUrl
+        {
+            get { return Page.ResolveUrl(pageUrl); }
+            set { pageUrl = value; }
+        }
+
+        public string EditPageUrl
+        {
+            get { return Page.ResolveUrl(editPageUrl); }
+            set { editPageUrl = value; }
+        }
+
+        #endregion
+
+        #region Load
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Request.IsAuthenticated)
+            {
+                SiteUtils.RedirectToLoginPage(this);
+                return;
+            }
+
+            LoadParams();
+            LoadSettings();
+
+            if (!ProductPermission.CanViewList)
+            {
+                SiteUtils.RedirectToAccessDeniedPage(this);
+                return;
+            }
+
+            PopulateLabels();
+
+            if (!Page.IsPostBack)
+                PopulateControls();
+        }
+
+        #endregion
+
+        #region "RadGrid Event"
+
+        void grid_NeedDataSource(object sender, Telerik.Web.UI.GridNeedDataSourceEventArgs e)
+        {
+            grid.PagerStyle.EnableSEOPaging = false;
+
+            bool isApplied = gridPersister.IsAppliedSortFilterOrGroup;
+            int iCount = Product.GetCountBySearch(siteSettings.SiteId, sZoneId, -1, -1, -1, productType, null, null, -1, -1, null, null, txtTitle.Text.Trim());
+            int startRowIndex = isApplied ? 1 : grid.CurrentPageIndex + 1;
+            int maximumRows = isApplied ? iCount : grid.PageSize;
+
+            grid.VirtualItemCount = iCount;
+            grid.AllowCustomPaging = !isApplied;
+
+            grid.DataSource = Product.GetPageBySearch(startRowIndex, maximumRows, siteSettings.SiteId, sZoneId, -1, -1, -1, productType, null, null, -1, -1, null, null, txtTitle.Text.Trim());
+        }
+
+        private string sZoneId
+        {
+            get
+            {
+                if (ddZones.SelectedValue.Length > 0)
+                {
+                    if (ddZones.SelectedValue == "-1")
+                        return "";
+
+                    return ddZones.SelectedValue;
+                }
+
+                return "0";
+            }
+        }
+
+        #endregion
+
+        #region Event
+
+        void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ProductPermission.CanDelete)
+                {
+                    SiteUtils.RedirectToEditAccessDeniedPage();
+                    return;
+                }
+
+                bool isDeleted = false;
+
+                foreach (GridDataItem data in grid.SelectedItems)
+                {
+                    int productId = Convert.ToInt32(data.GetDataKeyValue("ProductId"));
+                    Product product = new Product(siteSettings.SiteId, productId);
+
+                    if (product != null && product.ProductId != -1 && !product.IsDeleted)
+                    {
+                        if (product.ZoneId.ToString() != ddZones.SelectedValue && ddZones.SelectedValue != "-1")
+                        {
+                            ZoneSettings objZone = new ZoneSettings(siteSettings.SiteId, Convert.ToInt32(ddZones.SelectedValue));
+                            if (objZone != null && objZone.ZoneId > 0)
+                            {
+                                ZoneItem zoneNews = new ZoneItem(objZone.ZoneGuid, product.ProductGuid);
+                                ZoneItem.Delete(zoneNews.ZoneGuid, zoneNews.ItemGuid);
+                            }
+                        }
+                        else
+                        {
+                            ContentDeleted.Create(siteSettings.SiteId, product.Title, "Product", typeof(ProductDeleted).AssemblyQualifiedName, product.ProductId.ToString(), Page.User.Identity.Name);
+
+                            product.IsDeleted = true;
+
+                            product.ContentChanged += new ContentChangedEventHandler(product_ContentChanged);
+
+                            product.SaveDeleted();
+                            LogActivity.Write("Delete product", product.Title);
+                        }
+
+                        //ContentDeleted.Create(siteSettings.SiteId, product.Title, "Product", typeof(ProductDeleted).AssemblyQualifiedName, product.ProductId.ToString(), Page.User.Identity.Name);
+
+                        //product.IsDeleted = true;
+
+                        //product.ContentChanged += new ContentChangedEventHandler(product_ContentChanged);
+
+                        //product.SaveDeleted();
+                        //LogActivity.Write("Delete product", product.Title);
+
+                        isDeleted = true;
+                    }
+                }
+
+                if (isDeleted)
+                {
+                    SiteUtils.QueueIndexing();
+                    grid.Rebind();
+
+                    message.SuccessMessage = ResourceHelper.GetResourceString("Resource", "DeleteSuccessMessage");
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
+        }
+
+        void product_ContentChanged(object sender, ContentChangedEventArgs e)
+        {
+            IndexBuilderProvider indexBuilder = IndexBuilderManager.Providers["ProductIndexBuilderProvider"];
+            if (indexBuilder != null)
+            {
+                indexBuilder.ContentChangedHandler(sender, e);
+            }
+        }
+
+        void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ProductPermission.CanUpdate)
+                {
+                    SiteUtils.RedirectToEditAccessDeniedPage();
+                    return;
+                }
+
+                bool isUpdated = false;
+                foreach (GridDataItem data in grid.Items)
+                {
+                    TextBox txtDisplayOrder = (TextBox)data.FindControl("txtDisplayOrder");
+                    TextBox txtViewCount = (TextBox)data.FindControl("txtViewCount");
+                    TextBox txtProductCode = (TextBox)data.FindControl("txtProductCode");
+                    TextBox txtPrice = (TextBox)data.FindControl("txtPrice");
+                    TextBox txtOldPrice = (TextBox)data.FindControl("txtOldPrice");
+
+                    int productId = Convert.ToInt32(data.GetDataKeyValue("ProductId"));
+                    int displayOrder = Convert.ToInt32(data.GetDataKeyValue("DisplayOrder"));
+                    int viewCount = Convert.ToInt32(data.GetDataKeyValue("ViewCount"));
+                    string code = data.GetDataKeyValue("Code").ToString();
+                    decimal price = Convert.ToDecimal(data.GetDataKeyValue("Price"));
+                    decimal oldPrice = Convert.ToDecimal(data.GetDataKeyValue("OldPrice"));
+
+                    int displayOrderNew = displayOrder;
+                    int.TryParse(txtDisplayOrder.Text, out displayOrderNew);
+
+                    int viewCountNew = viewCount;
+                    int.TryParse(txtViewCount.Text, out viewCountNew);
+
+                    decimal priceNew = price;
+                    decimal.TryParse(txtPrice.Text, out priceNew);
+
+                    decimal oldPriceNew = oldPrice;
+                    decimal.TryParse(txtOldPrice.Text, out oldPriceNew);
+
+                    if (
+                        displayOrder != displayOrderNew 
+                        || viewCount != viewCountNew
+                        || txtProductCode.Text.Trim() != code.Trim()
+                        || priceNew != price
+                        || oldPriceNew != oldPrice
+                        )
+                    {
+                        Product product = new Product(siteSettings.SiteId, productId);
+                        if (product != null && product.ProductId != -1)
+                        {
+                            product.DisplayOrder = displayOrderNew;
+                            product.ViewCount = viewCountNew;
+                            product.Code = txtProductCode.Text.Trim();
+                            product.Price = priceNew;
+                            product.OldPrice = oldPriceNew;
+                            product.Save();
+
+                            LogActivity.Write("Update product", product.Title);
+
+                            isUpdated = true;
+                        }
+                    }
+                }
+
+                if (isUpdated)
+                {
+                    grid.Rebind();
+
+                    message.SuccessMessage = ResourceHelper.GetResourceString("Resource", "UpdateSuccessMessage");
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
+        }
+
+        void btnSearch_Click(object sender, EventArgs e)
+        {
+            grid.Rebind();
+        }
+
+        #endregion
+
+        #region Protected methods
+
+        protected bool CanEditProduct(int userId, bool isPublished, object oStateId)
+        {
+            // Should be check permission zone???
+            if (canUpdate)
+                return true;
+
+            //if (WebConfigSettings.EnableContentWorkflow && siteSettings.EnableContentWorkflow)
+            //{
+            //    if (oStateId != null)
+            //    {
+            //        int stateId = Convert.ToInt32(oStateId);
+
+            //        if (stateId == firstWorkflowStateId)
+            //        {
+            //            if (currentUser == null) { return false; }
+            //            return (userId == currentUser.UserId);
+            //        }
+            //    }
+            //}
+
+            return false;
+        }
+
+        #endregion
+
+        #region Populate
+
+        private void PopulateLabels()
+        {
+            Page.Title = SiteUtils.FormatPageTitle(siteSettings, pageTitle);
+            heading.Text = pageTitle;
+
+            UIHelper.DisableButtonAfterClick(
+                btnUpdate,
+                ProductResources.ButtonDisabledPleaseWait,
+                Page.ClientScript.GetPostBackEventReference(this.btnUpdate, string.Empty)
+                );
+
+            UIHelper.AddConfirmationDialog(btnDelete, ProductResources.ProductDeleteMultiWarning);
+        }
+
+        private void PopulateControls()
+        {
+            PopulateZoneList();
+        }
+
+        #endregion
+
+        #region Populate Zone List
+
+        private void PopulateZoneList()
+        {
+            gbSiteMapProvider.PopulateListControl(ddZones, false, Product.FeatureGuid);
+
+            if (canEditAnything)
+                ddZones.Items.Insert(0, new ListItem(ResourceHelper.GetResourceString("Resource", "All"), "-1"));
+
+            if (startZone.Length > 0)
+            {
+                ListItem li = ddZones.Items.FindByValue(startZone);
+                if (li != null)
+                {
+                    ddZones.ClearSelection();
+                    li.Selected = true;
+                }
+            }
+        }
+
+        #endregion
+
+        #region LoadSettings
+
+        private void LoadSettings()
+        {
+            canUpdate = ProductPermission.CanUpdate;
+
+            lnkInsert.Visible = ProductPermission.CanCreate;
+            btnUpdate.Visible = canUpdate;
+            btnDelete.Visible = ProductPermission.CanDelete;
+
+            currentUser = SiteUtils.GetCurrentSiteUser();
+            isAllowedZone = WebUser.IsAdminOrContentAdmin || SiteUtils.UserIsSiteEditor();
+
+            siteSettings = CacheHelper.GetCurrentSiteSettings();
+            basePage = Page as CmsBasePage;
+            siteRoot = basePage.SiteRoot;
+
+            canEditAnything = WebUser.IsAdminOrContentAdmin || SiteUtils.UserIsSiteEditor() || WebUser.IsInRoles("Order Administrators");
+
+            breadcrumb.CurrentPageTitle = pageTitle;
+            breadcrumb.CurrentPageUrl = pageUrl;
+
+            lnkInsert.NavigateUrl = siteRoot + EditPageUrl;
+            if (ddZones.SelectedValue != "-1" && ddZones.SelectedValue.Length > 0)
+                lnkInsert.NavigateUrl = siteRoot + EditPageUrl + "?start=" + ddZones.SelectedValue;
+            else
+            {
+                if (startZone.Length > 0)
+                    lnkInsert.NavigateUrl = siteRoot + EditPageUrl + "?start=" + startZone.ToString();
+            }
+
+            var column = grid.MasterTableView.Columns.FindByUniqueName("ProductCode");
+            if (column != null)
+                column.Visible = displaySettings.ShowProductCode;
+
+            column = grid.MasterTableView.Columns.FindByUniqueName("Price");
+            if (column != null)
+                column.Visible = displaySettings.ShowPrice;
+
+            column = grid.MasterTableView.Columns.FindByUniqueName("OldPrice");
+            if (column != null)
+                column.Visible = displaySettings.ShowOldPrice;
+        }
+
+        #endregion
+
+        #region LoadParams
+
+        private void LoadParams()
+        {
+            startZone = WebUtils.ParseStringFromQueryString("start", startZone);
+
+            timeOffset = SiteUtils.GetUserTimeOffset();
+            timeZone = SiteUtils.GetUserTimeZone();
+        }
+
+        #endregion
+
+        #region OnInit
+
+        override protected void OnInit(EventArgs e)
+        {
+            base.OnInit(e);
+            this.Load += new EventHandler(this.Page_Load);
+
+            btnSearch.Click += new EventHandler(btnSearch_Click);
+            btnUpdate.Click += new EventHandler(btnUpdate_Click);
+            btnDelete.Click += new EventHandler(btnDelete_Click);
+
+            this.grid.NeedDataSource += new Telerik.Web.UI.GridNeedDataSourceEventHandler(grid_NeedDataSource);
+
+            gridPersister = new RadGridSEOPersister(grid);
+        }
+
+        #endregion
+    }
+}
+
+
+namespace CanhCam.Web.ProductUI
+{
+    public class ProductDeleted : IContentDeleted
+    {
+        public bool RestoreContent(string productId)
+        {
+            try
+            {
+                SiteSettings siteSettings = CacheHelper.GetCurrentSiteSettings();
+                Product product = new Product(siteSettings.SiteId, Convert.ToInt32(productId));
+
+                if (product != null && product.ProductId > 0)
+                {
+                    product.IsDeleted = false;
+
+                    product.ContentChanged += new ContentChangedEventHandler(product_ContentChanged);
+
+                    product.SaveDeleted();
+
+                    SiteUtils.QueueIndexing();
+                }
+            }
+            catch (Exception) { return false; }
+
+            return true;
+        }
+
+        public bool DeleteContent(string productId)
+        {
+            try
+            {
+                SiteSettings siteSettings = CacheHelper.GetCurrentSiteSettings();
+                Product product = new Product(siteSettings.SiteId, Convert.ToInt32(productId));
+
+                if (product != null && product.ProductId != -1)
+                {
+                    ProductHelper.DeleteFolder(siteSettings.SiteId, product.ProductId);
+
+                    ContentMedia.DeleteByContent(product.ProductGuid);
+                    ShoppingCartItem.DeleteByProduct(product.ProductId);
+
+                    var listAtributes = ContentAttribute.GetByContentAsc(product.ProductGuid);
+                    foreach (ContentAttribute item in listAtributes)
+                    {
+                        ContentLanguage.DeleteByContent(item.Guid);
+                    }
+                    ContentAttribute.DeleteByContent(product.ProductGuid);
+                    ContentLanguage.DeleteByContent(product.ProductGuid);
+
+                    ProductProperty.DeleteByProduct(product.ProductId);
+                    FriendlyUrl.DeleteByPageGuid(product.ProductGuid);
+
+                    ProductComment.DeleteByProduct(product.ProductId);
+                    TagItem.DeleteByItem(product.ProductGuid);
+
+                    FileAttachment.DeleteByItem(product.ProductGuid);
+                    RelatedItem.DeleteByItem(product.ProductGuid);
+
+                    product.Delete();
+                }
+            }
+            catch (Exception) { return false; }
+
+            return true;
+        }
+
+        void product_ContentChanged(object sender, ContentChangedEventArgs e)
+        {
+            IndexBuilderProvider indexBuilder = IndexBuilderManager.Providers["ProductIndexBuilderProvider"];
+            if (indexBuilder != null)
+            {
+                indexBuilder.ContentChangedHandler(sender, e);
+            }
+        }
+
+    }
+}
